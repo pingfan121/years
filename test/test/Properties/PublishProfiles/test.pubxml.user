@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAs2gciRiprkeHOzAbVtHpEQAAAAACAAAAAAAQZgAAAAEAACAAAADvlWE/P8tKkBf7wEZ0cOhrElzpcRW80NKgcza+FXwpggAAAAAOgAAAAAIAACAAAAAUbyfUTx4EQGQ7VFBoPl4xDVIpfW/c+ObLwArCP9ajORAAAABY0r/Vt3FiEalWKsb687PNQAAAAKQf+U9oOPPwFm9wUCA+zIZWBdnpYXvMHcA8GJqofRGTqqe+ECOSZO98hvpvWilUpzYFx5tBr4/wx1bcNe6cYd8=</EncryptedPassword>
+    <_PublishTargetUrl>F:\web_publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>10/22/2017 19:24:56</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/23/2017 08:48:13</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>10/23/2017 08:48:13</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>10/22/2017 19:24:54</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/22/2017 19:24:55</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>10/22/2017 19:24:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>10/22/2017 19:24:55</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>10/22/2017 19:24:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>10/22/2017 19:24:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>10/22/2017 19:24:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>10/22/2017 19:24:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>10/22/2017 19:24:54</publishTime>
+    </File>
+    <File Include="bin/test.dll">
+      <publishTime>11/10/2017 09:24:45</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>10/22/2017 19:24:56</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>10/22/2017 19:24:56</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>10/22/2017 19:24:56</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Optimization.resources.dll">
+      <publishTime>10/22/2017 19:24:56</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>10/22/2017 19:24:56</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>10/22/2017 19:24:56</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>10/22/2017 19:24:56</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>10/22/2017 19:24:56</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>10/22/2017 19:24:51</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>10/22/2017 19:24:51</publishTime>
+    </File>
+    <File Include="Content/pf.css">
+      <publishTime>11/05/2017 13:44:31</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>11/05/2017 13:10:27</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>10/22/2017 19:24:45</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>10/22/2017 19:24:51</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>10/22/2017 19:24:51</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>10/22/2017 19:24:51</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>10/22/2017 19:24:50</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/22/2017 19:24:45</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/02/2017 07:31:30</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>10/22/2017 19:24:50</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>10/22/2017 19:24:50</publishTime>
+    </File>
+    <File Include="Scripts/custom/datamg.js">
+      <publishTime>11/05/2017 21:41:26</publishTime>
+    </File>
+    <File Include="Scripts/custom/game.js">
+      <publishTime>11/05/2017 22:40:19</publishTime>
+    </File>
+    <File Include="Scripts/custom/logic.js">
+      <publishTime>11/05/2017 21:28:02</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>10/22/2017 19:24:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>10/22/2017 19:24:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>10/22/2017 19:24:51</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>10/22/2017 19:24:55</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>10/22/2017 19:24:56</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>10/22/2017 19:24:56</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>11/04/2017 11:46:17</publishTime>
+    </File>
+    <File Include="sound/merge.wav">
+      <publishTime>11/05/2017 20:35:59</publishTime>
+    </File>
+    <File Include="sound/move.wav">
+      <publishTime>11/05/2017 20:35:59</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>10/22/2017 19:24:45</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>10/22/2017 19:24:45</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>10/26/2017 23:46:08</publishTime>
+    </File>
+    <File Include="Views/Movies/Create.cshtml">
+      <publishTime>10/23/2017 09:04:17</publishTime>
+    </File>
+    <File Include="Views/Movies/Delete.cshtml">
+      <publishTime>10/23/2017 09:04:18</publishTime>
+    </File>
+    <File Include="Views/Movies/Details.cshtml">
+      <publishTime>10/23/2017 09:04:18</publishTime>
+    </File>
+    <File Include="Views/Movies/Edit.cshtml">
+      <publishTime>10/23/2017 09:04:18</publishTime>
+    </File>
+    <File Include="Views/Movies/Index.cshtml">
+      <publishTime>10/25/2017 09:26:09</publishTime>
+    </File>
+    <File Include="Views/Perfect/Index.cshtml">
+      <publishTime>10/26/2017 21:53:15</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>10/22/2017 19:24:45</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>10/26/2017 23:45:59</publishTime>
+    </File>
+    <File Include="Views/Test/About.cshtml">
+      <publishTime>11/10/2017 09:19:30</publishTime>
+    </File>
+    <File Include="Views/Test/Index.cshtml">
+      <publishTime>11/10/2017 09:22:52</publishTime>
+    </File>
+    <File Include="Views/Test/Welcome.cshtml">
+      <publishTime>10/23/2017 08:36:57</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>10/22/2017 19:24:45</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>10/22/2017 19:24:45</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/05/2017 12:44:36</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

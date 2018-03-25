@@ -1,0 +1,1 @@
+namespace GameServer.Define.EnumNormal{	public enum EnumSmelterType	{		unknown = 0,		blood_runes = 1,//玉佩合成		shield = 2,//护盾合成		dragon = 3,//龙心合成		wolf = 4,//狼牙合成		medal = 5,//勋章合成	}}

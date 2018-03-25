@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0ACC664E-12FC-4DAA-AF22-D7810CE661AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameDb</RootNamespace>
+    <AssemblyName>GameDb</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\dll\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Client, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\ServiceStack.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\dll\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\dll\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\dll\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SQLite, Version=1.0.97.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ColumnInfo.cs" />
+    <Compile Include="Common\CommonUtils.cs" />
+    <Compile Include="Common\DbCondition.cs" />
+    <Compile Include="Common\DbEntityUtils.cs" />
+    <Compile Include="Common\DbKeywords.cs" />
+    <Compile Include="Common\DynamicCalls.cs" />
+    <Compile Include="Common\EntityHelper.cs" />
+    <Compile Include="Common\IdInfo.cs" />
+    <Compile Include="Common\Map.cs" />
+    <Compile Include="Common\PageResult.cs" />
+    <Compile Include="Common\ParamMap.cs" />
+    <Compile Include="Common\ReflectionHelper.cs" />
+    <Compile Include="Common\SQLBuilderHelper.cs" />
+    <Compile Include="Common\TableInfo.cs" />
+    <Compile Include="Common\TypeUtils.cs" />
+    <Compile Include="CustomAttributes\ColumnAttribute.cs" />
+    <Compile Include="CustomAttributes\GenerationType.cs" />
+    <Compile Include="CustomAttributes\IdAttribute.cs" />
+    <Compile Include="CustomAttributes\TableAttribute.cs" />
+    <Compile Include="Database\DbCmd.cs" />
+    <Compile Include="Database\DbConfig.cs" />
+    <Compile Include="Database\DbFactory.cs" />
+    <Compile Include="Database\DbFrame.cs" />
+    <Compile Include="Database\DbMySql.cs" />
+    <Compile Include="Database\DbRedis.cs" />
+    <Compile Include="Database\interface\IDbCmd.cs" />
+    <Compile Include="Database\interface\IDbConnect.cs" />
+    <Compile Include="Data\TbDataAchievement.cs" />
+    <Compile Include="Data\TbDataAchievementPointAward.cs" />
+    <Compile Include="Data\TbDataActiveValueAward.cs" />
+    <Compile Include="Data\TbDataActiveValueGet.cs" />
+    <Compile Include="Data\TbDataMission.cs" />
+    <Compile Include="Data\TbDataVip.cs" />
+    <Compile Include="Data\TbDataWing.cs" />
+    <Compile Include="Data\TbDataWneg.cs" />
+    <Compile Include="Data\TbDataWorldBoss.cs" />
+    <Compile Include="Data\TempleManager.cs" />
+    <Compile Include="DBUtility\AdoHelper.cs" />
+    <Compile Include="DBUtility\DatabaseType.cs" />
+    <Compile Include="DBUtility\DbFactory.cs" />
+    <Compile Include="DBUtility\DbOperateType.cs" />
+    <Compile Include="DBUtility\DbTypeConvert.cs" />
+    <Compile Include="Define\EnumNormal\EnumBattleTargetRelationType.cs" />
+    <Compile Include="Define\EnumNormal\EnumMapSpriteType.cs" />
+    <Compile Include="Define\EnumNormal\EnumMapViewEnterType.cs" />
+    <Compile Include="Define\EnumNormal\EnumSmelterType.cs" />
+    <Compile Include="Define\EnumNormal\EnumStrengthenType.cs" />
+    <Compile Include="Define\EnumNormal\EnumTargetSelectType.cs" />
+    <Compile Include="Define\EnumNormal\EnumTaskSortType.cs" />
+    <Compile Include="Define\EnumNormal\EnumTaskStepType.cs" />
+    <Compile Include="Define\EnumNormal\EnumTaskTargetType.cs" />
+    <Compile Include="Define\EnumNormal\EnumTeamMode.cs" />
+    <Compile Include="Define\EnumNormal\EnumTeamState.cs" />
+    <Compile Include="Define\EnumNormal\EnumTitleState.cs" />
+    <Compile Include="Define\EnumNormal\EnumWorldBossState.cs" />
+    <Compile Include="Define\EnumServer\EnumActShzcAwardType.cs" />
+    <Compile Include="Define\EnumServer\EnumAiStateType.cs" />
+    <Compile Include="Define\EnumServer\EnumAthleticsDays.cs" />
+    <Compile Include="Define\EnumServer\EnumAthleticsSort.cs" />
+    <Compile Include="Define\EnumServer\EnumAttrGroupType.cs" />
+    <Compile Include="Define\EnumServer\EnumBufferStackType.cs" />
+    <Compile Include="Define\EnumServer\EnumClientType.cs" />
+    <Compile Include="Define\EnumServer\EnumCompountPosType.cs" />
+    <Compile Include="Define\EnumServer\EnumConditionResult.cs" />
+    <Compile Include="Define\EnumServer\EnumConstantValue.cs" />
+    <Compile Include="Event\AppEvent.cs" />
+    <Compile Include="Event\EventStruct.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Logic\TbLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session\Session.cs" />
+    <Compile Include="Util\ArrayUtil.cs" />
+    <Compile Include="Util\CheckUtil.cs" />
+    <Compile Include="Util\ColomnInfo.cs" />
+    <Compile Include="Util\DateUtil.cs" />
+    <Compile Include="Util\Dialog.cs" />
+    <Compile Include="Util\FileIO.cs" />
+    <Compile Include="Util\FileSystem.cs" />
+    <Compile Include="Util\JSON.cs" />
+    <Compile Include="Util\LinkList.cs" />
+    <Compile Include="Log\LOG.cs" />
+    <Compile Include="Log\LogFactory.cs" />
+    <Compile Include="Log\LogImplement.cs" />
+    <Compile Include="Util\NumericalUtil.cs" />
+    <Compile Include="Util\ObjectID.cs" />
+    <Compile Include="Util\ObjectPool.cs" />
+    <Compile Include="Util\pf.cs" />
+    <Compile Include="Util\StringUtil.cs" />
+    <Compile Include="Util\SystemInfo.cs" />
+    <Compile Include="Util\Zip.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\log_config.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="外部项目需要的\data\" />
+    <Folder Include="外部项目需要的\dbstruct\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="外部项目需要的\1文件夹说明.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

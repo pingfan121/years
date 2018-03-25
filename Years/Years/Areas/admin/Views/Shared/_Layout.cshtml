@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 岁月后台管理</title>
+    <link href="~/Content/CSS/zui.css" rel="stylesheet" />
+    <link href="~/Content/CSS/zui-theme.css" rel="stylesheet" />
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/lib/metisMenu/metisMenu.css" rel="stylesheet" />
+    <link href="~/Content/CSS/index.css" rel="stylesheet" />
+    @RenderSection("stylesheet", required: false)
+    <script src="~/Content/JS/jquery-1.12.4.min.js"></script>
+    <script src="~/Content/JS/zui.js"></script>
+    <script src="~/Content/lib/metisMenu/metisMenu.js"></script>
+    <script src="~/Content/JS/index.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://libs.useso.com/js/respond.js/1.4.2/respond.min.js"></script>
+    <script src="lib/ieonly/excanvas.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <!--header-->
+    <header>
+        <div class="navbar navbar-inverse " role="navigation">
+            <div class="navbar-header">
+                <!--移动设备上的导航切换按钮-->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-example">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--品牌名称或logo-->
+                <a class="navbar-brand">系统后台</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-collapse-example">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a><i class="icon icon-user"></i>&nbsp;&nbsp;您好，admin</a></li>
+                    <li><a><i class="icon icon-exchange"></i>&nbsp;&nbsp;隐藏菜单</a></li>
+                    <li><a href="/admin/Home"><i class="icon icon-home"></i>&nbsp;&nbsp;首页</a></li>
+                    <li><a><i class="icon icon-question-sign"></i>&nbsp;&nbsp;帮助</a></li>
+                    <li><a><i class="icon icon-off"></i>&nbsp;&nbsp;退出</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
+    <!--content-->
+    <div class="clearfix">
+        @Html.Partial("_sidebar")
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 rightmain">
+            <div class="col-sm-12  col-md-12  rightcontent">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <!--content end-->
+    <!--footer-->
+    <footer class="col-md-12 footer footerstyle">
+        <p>&copy; @DateTime.Now.Year - 我的博客系统</p>
+    </footer>
+    <!--footer end-->
+
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

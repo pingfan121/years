@@ -1,0 +1,1 @@
+namespace GameServer.Define.EnumNormal{	public enum EnumRechargeAwardGetType	{		none = 0,//不可领取		submit = 1,//可领取		complete = 2,//领取完成	}}

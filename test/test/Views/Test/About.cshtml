@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+  
+</head>
+
+<div class="container">
+
+    <div class="jumbotron" style="text-align:center">
+        <h3> 借一盏午夜街头昏黄灯光<br/><br /><br /><br />照亮那坎坷路上人影一双</h3>
+    </div>
+</div>
+
+<script>
+    function onload()
+    {
+        document.getElementById("textdiv").style.height=window.innerHeight * 45/100;
+    }
+</script>

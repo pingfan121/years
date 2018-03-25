@@ -1,0 +1,1 @@
+namespace GameServer.Define.EnumNormal{	public enum EnumMapSpriteType	{		none = 0,//未知		role = 1,//角色		monster = 2,//怪物		pet = 3,//宠物		npc = 4,//NPC		guard = 5,//守卫		collect = 6,//采集		retinue = 7,//随从		drop = 8,//掉落物		trap = 9,//陷阱		decoration = 10,//装饰		mars = 11,//战神	}}

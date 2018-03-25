@@ -1,0 +1,1 @@
+namespace GameServer.Define.EnumNormal{	public enum EnumTeamState	{		normal = 0,//正常		request_clone = 1,//请求队伍副本		running_clone = 2,//正在进行队伍副本	}}

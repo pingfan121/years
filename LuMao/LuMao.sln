@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuMao", "LuMao\LuMao.csproj", "{C74C9629-9B89-423A-ACE5-2041B43BF0AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilLib", "..\UtilLib\UtilLib.csproj", "{3F210BD2-4F26-4378-9C1C-1547FE86C445}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuMaoDB", "LuMaoDB\LuMaoDB.csproj", "{806E4A6E-6D68-4776-8670-E0D777587CC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YaoWanDB", "YaoWanDB\YaoWanDB.csproj", "{A1EC5619-DCB0-4BA6-B72D-5EF85D3C16D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C74C9629-9B89-423A-ACE5-2041B43BF0AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C74C9629-9B89-423A-ACE5-2041B43BF0AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C74C9629-9B89-423A-ACE5-2041B43BF0AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C74C9629-9B89-423A-ACE5-2041B43BF0AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F210BD2-4F26-4378-9C1C-1547FE86C445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F210BD2-4F26-4378-9C1C-1547FE86C445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F210BD2-4F26-4378-9C1C-1547FE86C445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F210BD2-4F26-4378-9C1C-1547FE86C445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{806E4A6E-6D68-4776-8670-E0D777587CC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{806E4A6E-6D68-4776-8670-E0D777587CC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{806E4A6E-6D68-4776-8670-E0D777587CC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{806E4A6E-6D68-4776-8670-E0D777587CC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1EC5619-DCB0-4BA6-B72D-5EF85D3C16D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1EC5619-DCB0-4BA6-B72D-5EF85D3C16D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1EC5619-DCB0-4BA6-B72D-5EF85D3C16D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1EC5619-DCB0-4BA6-B72D-5EF85D3C16D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1 @@
+namespace GameServer.Define.EnumNormal{	public enum EnumTaskStepType	{		none = 0,//无		accept = 1,//可接受的		underway = 2,//进行中的		achievable = 3,//可完成的		finish = 4,//已完成	}}

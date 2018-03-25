@@ -1,0 +1,1 @@
+namespace GameServer.Define.EnumNormal{	public enum EnumBattleTargetRelationType	{		none = 0,//无		self = 1,//自身		friend = 2,//友方		enemy = 3,//敌人		pet = 4,//宠物	}}

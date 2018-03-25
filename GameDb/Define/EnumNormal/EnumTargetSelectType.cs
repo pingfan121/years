@@ -1,0 +1,1 @@
+namespace GameServer.Define.EnumNormal{	public enum EnumTargetSelectType	{		none = 0,//无		unit = 1,//单位		grid = 2,//格子		dir = 3,//方向	}}

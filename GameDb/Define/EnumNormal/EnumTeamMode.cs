@@ -1,0 +1,1 @@
+namespace GameServer.Define.EnumNormal{	public enum EnumTeamMode	{		none = 0,//无状态		auto = 1,//自动组队		manual = 2,//手动组队		refuse = 3,//拒绝组队	}}

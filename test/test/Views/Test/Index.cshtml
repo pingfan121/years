@@ -1,0 +1,192 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <link rel="stylesheet" href="../../Content/bootstrap.min.css" type="text/css" />
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div style="margin-top: 20px; margin-left:2%; margin-right:2%">
+            <div class="row" id="anniu">
+                <button type="button" id ="restart" class="btn btn-info" style="width: 21%; margin-right:4%;" onclick="resetStart()">重玩</button>
+                <button type="button" id="txt_num" class="btn btn-info button1" style="width: 21%; margin-right: 4%" onclick="setCount()">4 X 4</button>
+                <button type="button" id="sound" class="btn btn-info button1" style="width: 21%; margin-right: 4%" onclick="setSound()">声音(开)</button>
+                <button type="button" id="about" class="btn btn-info button1" style="width: 21%;">关于</button>
+            </div>
+
+            <div class="row text-center" style="margin-top: 20px; border-radius:5px; background:#59a5cb">
+                <div style="float: left;width:50%;">
+                    <p style="margin-top:10px">
+                        当前分数
+                    </p>
+                    <p id="cur_score" style="margin-top:10px;margin-bottom:10px">
+                        1222
+                    </p>
+                </div>
+                <div style="float: left;width:50%;">
+                    <p style="margin-top:10px">
+                        最高分数
+                    </p>
+                    <p id="max_score" style="margin-top:10px;margin-bottom:10px">
+                        1222
+                    </p>
+                </div>
+            </div>
+            <div class="row" style="margin-top:20px">
+                <canvas id="canvs1"></canvas>
+            </div>
+        </div>
+        <audio id="myaudio" style="display: none;" controls></audio>
+    </div>
+</body>
+
+<script src="../../scripts/custom/datamg.js">
+</script>
+
+<script src="../../scripts/custom/logic.js">
+
+</script>
+<script src="../../scripts/custom/game.js">
+
+</script>
+
+<script>
+
+    $(function () {
+        var mycanvas = document.getElementById("canvs1");
+        var aa = document.getElementById("anniu");
+
+        mycanvas.width = aa.clientWidth;
+        mycanvas.height = aa.clientWidth;
+
+        mycanvas.style.width = aa.clientWidth  * 2;
+        mycanvas.style.height = aa.clientWidth * 2;
+
+        mycanvas.onmousedown = mousedown;
+        mycanvas.onmouseup = mouseup;
+
+        onLoad(mycanvas);
+    });
+
+   
+    function mousedown(event)
+    {
+        var point = {};
+        point.x = event.clientX;
+        point.y = event.clientY;
+        startPoint(point);
+    }
+
+    function mouseup(event) {
+        var point2 = {};
+        point2.x = event.clientX;
+        point2.y = event.clientY;
+        endPoint(point2);
+        updateScore();
+    }
+
+    //禁止浏览器 滑动
+    document.querySelector('body').addEventListener('touchstart', function (ev) {
+
+        var mycanvas = document.getElementById("canvs1");
+        
+        if (ev.target == mycanvas)
+        {
+            var point2 = {};
+            point2.x = ev.touches[0].clientX;
+            point2.y = ev.touches[0].clientY;
+            startPoint(point2);
+        }
+      
+        ev.preventDefault();
+        
+    });
+
+    //禁止浏览器 滑动
+    document.querySelector('body').addEventListener('touchend', function (ev) {
+      
+        var mycanvas = document.getElementById("canvs1");
+        var btn_restart = document.getElementById("restart");
+        var btn_num = document.getElementById("txt_num");
+        var btn_sound = document.getElementById("sound");
+        var btn_about = document.getElementById("about");
+
+        if (ev.target == mycanvas)
+        {
+            var point2 = {};
+            point2.x = ev.changedTouches[0].clientX;
+            point2.y = ev.changedTouches[0].clientY;
+            endPoint(point2);
+            updateScore();
+        }
+        else if (ev.target == btn_restart) {
+            resetStart();
+        }
+        else if (ev.target == btn_num) {
+            setCount();
+        }
+        else if (ev.target == btn_sound) {
+            setSound();
+        }
+        else if (ev.target == btn_about) {
+
+        }
+      
+        event.preventDefault();
+    });
+
+    function resetStart() {
+        onRestart();
+
+        updateScore();
+    }
+
+    //设置数量
+    function setCount() {
+        onResetCount();
+
+        var str = data.count + " X " + data.count;
+
+        document.getElementById("txt_num").innerHTML = str;
+
+        updateScore();
+    }
+
+    //设置声音标志
+    function setSound() {
+        soundflag = !soundflag;
+
+        if (soundflag == true) {
+            document.getElementById("sound").innerHTML = "声音(开)";
+        }
+        else {
+            document.getElementById("sound").innerHTML = "声音(关)";
+        }
+    }
+
+    ////设置画布尺寸
+    //function setCanvasSize() {
+    //    var aa = document.getElementById("anniu");
+    //    var mycanvas = document.getElementById("canvs1");
+    //    mycanvas.width = aa.clientWidth;
+    //    mycanvas.height = aa.clientWidth;
+    //    //     mycanvas.style.width = aa.clientWidth*2;
+    //    //     mycanvas.style.height = aa.clientWidth*2;
+
+
+    //    onUpdate();
+    //}
+
+</script>
+
+

@@ -1,0 +1,1 @@
+namespace GameServer.Define.EnumNormal{	public enum EnumTitleState	{		normal = 0,//正常的		invalid = 1,//无效的	}}

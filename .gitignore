@@ -1,0 +1,7 @@
+
+# directory:
+publish
+**/obj
+**/bin
+**/.suo
+
