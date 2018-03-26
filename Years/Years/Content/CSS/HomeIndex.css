@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family:"Microsoft YaHei";
+}
+body{
+    background: #F0EEF5;
+}
+/*导航*/
+.navbar-default .navbar-brand{
+    font-size: 20px;
+    color:#40D2B1;
+}
+/*主体内容*/
+.main{
+    margin-top: 41px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+/*轮播图样式*/
+section#lunbotu{
+    /*轮播图阴影效果*/
+    box-shadow: 1px 4px 15px #A39F9F;
+}
+/*博客列表样式*/
+section#boke{
+    margin-top: 1px;
+}
+section#boke .day{
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #dedede;
+    margin-bottom: -1px;
+}
+section#boke .day:hover{
+    border: 1px solid #169fe6;
+    position: relative;
+    z-index: 10;
+}
+section#boke .day .dayTitle{
+    float: left;
+    margin-right: 10px;
+}
+section#boke .day .postTitle{
+    font-size: 21px;
+    line-height: 1.5em;
+    float: left;
+    clear: right;
+}
+section#boke .day .postTitle2{
+    color: #555;
+}
+section#boke .day .postCon{
+    padding: 15px 0;
+    clear: both;
+}
+.c_b_p_desc{
+    font-size: 14px;
+    color: #333;
+    line-height: 200%;
+}
+.postDesc{
+    clear: both;
+    color: #aeaeae;
+    float: none;
+    text-align: left;
+    line-height: 200%;
+    font-size: 14px;
+}
+/*博客列表样式结束*/
+/*右边栏样式*/
+section.youbianlan{
+    margin-bottom:10px;
+}
+
+section.youbianlan h4 {
+    letter-spacing: 1.1px;
+    font-size: 15px;
+    color: #3598db;
+}
+section.youbianlan ul{
+   margin-bottom: 0px;
+    padding-left: 0px;
+}
+section.youbianlan li:before{
+    content: counter(listxh);
+    background: #3598db;
+    padding: 2px 5px;
+    color: #fff;
+    margin-right: 5px;
+}
+section.youbianlan li{
+    counter-increment: listxh;
+    display: inline-block;
+    width: 100%;
+    vertical-align: bottom;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 14px;
+    -webkit-transition:text-shadow 1s linear;
+    -moz-transition:text-shadow 1s linear;
+    -ms-transition:text-shadow 1s linear;
+    -o-transition:text-shadow 1s linear;
+    transition:text-shadow 1s linear;
+}
+section.youbianlan li:hover{
+    text-shadow: 1px 4px 4px #b0b0b0;
+}
+section.youbianlan a{
+    color: #444444;
+    text-decoration: none;
+}
+section.youbianlan a:hover{
+    color: #ff0326;
+}
+section.youbianlan li:last-child:before{
+    padding: 2px;
+    font-size: 14px;
+}
+.panel-heading {
+    padding: 2px 15px;
+}
+
+/*版权信息*/
+#footer_wrapper{
+    background-color: #3598db;
+    margin-top: 40px;
+    padding: 5px;
+}
+#footer_wrapper li{
+    display: inline-block;
+    vertical-align: top;
+    border-right: solid 1px #ffffff;
+    padding-right: 18px;
+    margin-left: 18px;
+}
+#footer_wrapper li:last-child
+{
+    border: 0px;
+}
+#footer_wrapper footer
+{
+    text-align: center;
+}
+#footer_wrapper a{
+    color: #ffffff;
+    text-decoration: none;
+}
+#footer_wrapper p{
+    color: #ffffff;
+    margin-top: 5px;
+}
+/*内容主题样式*/
+.example{
+    background: #fff;
+}
+.article{
+    padding-top: 0px;
+
+}
+/*页码样式*/
+.pagination {
+    background:#fff;
+    text-align:center;
+}

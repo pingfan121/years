@@ -1,0 +1,45 @@
+*{
+   margin: 0;
+   padding: 0;
+   font-family: "WenQuanYi Micro Hei";
+}
+body{
+    background: url("../images/login_bk.jpg") no-repeat;
+    background-size:cover;
+}
+.example h1{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+.login-box img{
+    width: 80px;
+    height: 40px;
+}
+
+.login-sb
+{
+    text-align: center;
+}
+.login-cb{
+   float: right;
+
+}
+.Component{
+    height: 0px;
+}
+/*ÊµÀý¿ò*/
+.example {
+    background:#fff;
+    position: relative;
+    padding: 20px;
+    border-style: solid;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: all .3s;
+    width: 500px;
+    height: 300px;
+    top:50%;
+    left: 50%;
+    margin: 150px 0 0 -250px;
+}

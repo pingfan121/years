@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminUserInfoService.cs" />
     <Compile Include="BaseServices.cs" />
     <Compile Include="BlogArticleServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

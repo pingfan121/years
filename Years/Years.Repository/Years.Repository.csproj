@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminUserInfoRepository.cs" />
     <Compile Include="BaseRepository.cs" />
     <Compile Include="BlogArticleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

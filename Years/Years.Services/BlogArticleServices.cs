@@ -27,7 +27,7 @@ namespace Years.Services
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public BlogViewModels getBlogDetails(string id)
+        public BlogViewModel getBlogDetails(string id)
         {
             BlogArticle blogArticle = dal.QueryWhere(a => a.id == id).FirstOrDefault();
             BlogArticle nextblog = dal.QueryWhere(a => a.id == id).FirstOrDefault();
@@ -36,8 +36,8 @@ namespace Years.Services
             dal.Edit(blogArticle, new string[] { "traffic" });
             dal.SaverChanges();
             //AutoMapper自动映射
-            Mapper.Initialize(cfg => cfg.CreateMap<BlogArticle, BlogViewModels>());
-            BlogViewModels models = Mapper.Map<BlogArticle, BlogViewModels>(blogArticle);
+            Mapper.Initialize(cfg => cfg.CreateMap<BlogArticle, BlogViewModel>());
+            BlogViewModel models = Mapper.Map<BlogArticle, BlogViewModel>(blogArticle);
             if (nextblog != null)
             {
                 models.next = nextblog.title;

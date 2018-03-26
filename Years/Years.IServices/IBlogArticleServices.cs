@@ -15,6 +15,6 @@ namespace Years.IServices
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        BlogViewModels getBlogDetails(string id);
+        BlogViewModel getBlogDetails(string id);
     }
 }

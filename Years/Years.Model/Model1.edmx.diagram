@@ -7,6 +7,7 @@
       <Diagram DiagramId="a5e18ba922134cd7824119cfef87399a" Name="Diagram1">
         <EntityTypeShape EntityType="yearsModel.UserInfo" Width="1.5" PointX="0.5" PointY="0.5" />
         <EntityTypeShape EntityType="yearsModel.BlogArticle" Width="1.5" PointX="2.625" PointY="0.5" />
+        <EntityTypeShape EntityType="yearsModel.AdminUserInfo" Width="1.5" PointX="0.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

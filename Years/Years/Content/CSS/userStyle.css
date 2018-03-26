@@ -1,0 +1,137 @@
+﻿/*导航部分*/
+.usercontent {
+    font-size: 13px;
+    color: #676a6c;
+    background-color: #f3f3f4;
+    box-sizing: border-box;
+}
+.white-bg {
+    background-color: #ffffff;
+     margin-right: -10px;
+}
+.tnav h2 {
+    margin: 15px 0;
+}
+.tnav .breadcrumb {
+    margin: 20px 0 0 10px;
+}
+.breadcrumb {
+    background-color: #ffffff;
+    padding: 0;
+}
+.fl {
+    float: left;
+}
+/*导航部分结束*/
+/*表格部分头部*/
+.ibox-title {
+    background-color: #ffffff;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 4px 0px 0;
+    color: inherit;
+    margin-bottom: 0;
+    padding: 14px 15px 7px;
+    min-height: 48px;
+}
+    .ibox-title h5 {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 0 7px;
+    padding: 0;
+    text-overflow: ellipsis;
+    float: left;
+    }
+.rboor {
+    margin-top: -5px;
+}
+.ibox-tools {
+    display: inline-block;
+    float: right;
+    position: relative;
+    padding: 0;
+}
+/*表格头部结束*/
+/*表格主体*/
+.ibox-content {
+    clear: both;
+}
+.ibox-content {
+    background-color: #ffffff;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0px;
+}
+/*底部信息*/
+ .bottom div {
+            box-sizing: border-box;
+            display: block;
+        }
+.dataTables_wrapper .dataTables_info {
+    clear: both;
+    float: left;
+    padding-top: 0.755em;
+}
+.dataTables_wrapper .dataTables_length {
+float: left;
+margin-left: 15px;
+margin-top: 5px;
+}
+.dataTables_paginate {
+    float: right;
+    text-align: right;
+    padding-top: 0.25em;
+}
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+ul {
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+.paginate_button {
+    box-sizing: border-box;
+    min-width: 1.5em;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    color: #333 !important;
+    border: 1px solid transparent;
+    outline: none;
+}
+.paginate_button.disabled {
+    cursor: default;
+    color: #666 !important;
+    border: 1px solid transparent;
+    background: transparent;
+    box-shadow: none;
+    outline: none;
+}
+a {
+    color:none;
+}
+input[type="checkbox"] {
+        margin: 0 5px 0 15px;
+    -webkit-appearance:checkbox;
+        width: 16px;
+    height: 16px;
+        background: white;
+    border: 1px solid #ccc;
+}
+.tn {
+    text-align:center;
+}
+.pagination .active{
+    background: #ddd;
+}

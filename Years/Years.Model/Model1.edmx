@@ -5,6 +5,20 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="yearsModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin_user_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="18" />
+          <Property Name="mail" Type="varchar" MaxLength="255" />
+          <Property Name="pass" Type="varchar" MaxLength="255" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="real_name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="sex" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="intro" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
         <EntityType Name="blog_article">
           <Key>
             <PropertyRef Name="id" />
@@ -35,6 +49,7 @@
           <Property Name="intro" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityContainer Name="yearsModelStoreContainer">
+          <EntitySet Name="admin_user_info" EntityType="Self.admin_user_info" Schema="years" store:Type="Tables" />
           <EntitySet Name="blog_article" EntityType="Self.blog_article" Schema="years" store:Type="Tables" />
           <EntitySet Name="user_info" EntityType="Self.user_info" Schema="years" store:Type="Tables" />
         </EntityContainer>
@@ -45,6 +60,7 @@
         <EntityContainer Name="yearsEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="user_info" EntityType="yearsModel.UserInfo" />
           <EntitySet Name="blog_article" EntityType="yearsModel.BlogArticle" />
+          <EntitySet Name="admin_user_info" EntityType="yearsModel.AdminUserInfo" />
         </EntityContainer>
         <EntityType Name="UserInfo">
           <Key>
@@ -74,6 +90,20 @@
           <Property Name="update_time" Type="DateTime" Nullable="false" />
           <Property Name="create_time" Type="DateTime" Nullable="false" />
           <Property Name="remark" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AdminUserInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="mobile" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="mail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="pass" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="real_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="sex" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" />
+          <Property Name="intro" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -108,6 +138,21 @@
                 <ScalarProperty Name="category" ColumnName="category" />
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="submitter" ColumnName="submitter" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="admin_user_info">
+            <EntityTypeMapping TypeName="yearsModel.AdminUserInfo">
+              <MappingFragment StoreEntitySet="admin_user_info">
+                <ScalarProperty Name="intro" ColumnName="intro" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="real_name" ColumnName="real_name" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

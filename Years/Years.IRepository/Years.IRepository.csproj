@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="class1.cs" />
+    <Compile Include="IAdminUserInfoRepository.cs" />
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="IBlogArticleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

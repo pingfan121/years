@@ -9,7 +9,7 @@ namespace Years.ViewModel
     /// <summary>
     /// 博客信息展示类
     /// </summary>
-    public class BlogViewModels
+    public class BlogViewModel
     {
         /// <summary>
         /// 

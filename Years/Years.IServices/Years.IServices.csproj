@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAdminuserInfoService.cs" />
     <Compile Include="IBaseServices.cs" />
     <Compile Include="IBlogArticleServices.cs" />
     <Compile Include="IUserInfoServices.cs" />
