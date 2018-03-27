@@ -68,6 +68,22 @@ namespace Years.Services
             return baseDal.QueryByPage(pageIndex, pagesize, out rowcount, predicate, keySelector, IsQueryOrderBy);
 
         }
+
+        /// <summary>
+        /// 从第几条开始用于DataTables
+        /// </summary>
+        /// <typeparam name="TKey"></typeparam>
+        /// <param name="pageIndex">第几页开始</param>
+        /// <param name="pagesize">一页几条</param>
+        /// <param name="rowcount">一共多少条</param>
+        /// <param name="predicate">条件</param>
+        /// <param name="keySelector">排序关键字</param>
+        /// <param name="IsQueryOrderBy">升序还是降序</param>
+        /// <returns></returns>
+        public List<TEntity> QueryByBeginPage<TKey>(int pageIndex, int pagesize, out int rowcount, Expression<Func<TEntity, bool>> predicate, Expression<Func<TEntity, TKey>> keySelector, bool IsQueryOrderBy)
+        {
+            return baseDal.QueryByBeginPage(pageIndex, pagesize, out rowcount, predicate, keySelector, IsQueryOrderBy);
+        }
         #endregion
 
         #region 编辑

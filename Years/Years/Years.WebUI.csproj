@@ -177,9 +177,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
+    <Compile Include="Areas\admin\Controllers\AdminUserInfoController.cs" />
     <Compile Include="Areas\admin\Controllers\BlogArticleController.cs" />
     <Compile Include="Areas\admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\admin\Controllers\VcodeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -697,7 +699,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admin\Models\" />
+    <Folder Include="Areas\admin\Views\AdminUserInfo\" />
     <Folder Include="Areas\admin\Views\Login\" />
+    <Folder Include="Areas\admin\Views\Vcode\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -712,6 +716,10 @@
     <ProjectReference Include="..\UtilLib\UtilLib.csproj">
       <Project>{3F210BD2-4F26-4378-9C1C-1547FE86C445}</Project>
       <Name>UtilLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Years.Common\Years.Common.csproj">
+      <Project>{EB8FC770-C49A-4624-A549-8B003D741BAD}</Project>
+      <Name>Years.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Years.IServices\Years.IServices.csproj">
       <Project>{A8657D8F-3656-4CED-B3A0-7ABC44211B8F}</Project>

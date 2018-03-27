@@ -12,7 +12,7 @@ namespace Years.ViewModel
 
         public string login_pass { get; set; }
 
-        public string code { get; set; }
+        public string vcode { get; set; }
 
         public bool is_member { get; set; }
     }

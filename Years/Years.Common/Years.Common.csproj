@@ -51,6 +51,8 @@
     <Compile Include="Cache\MemoryCacheManager.cs" />
     <Compile Include="Cache\RedisCacheManager.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Keys.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

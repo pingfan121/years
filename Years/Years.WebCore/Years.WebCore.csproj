@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin\AdminBaseController.cs" />
+    <Compile Include="Attrs\SkipCheckLogin.cs" />
     <Compile Include="BaseController.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Filters\ExpFilter.cs" />
@@ -89,6 +90,10 @@
     <ProjectReference Include="..\UtilLib\UtilLib.csproj">
       <Project>{3F210BD2-4F26-4378-9C1C-1547FE86C445}</Project>
       <Name>UtilLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Years.Common\Years.Common.csproj">
+      <Project>{eb8fc770-c49a-4624-a549-8b003d741bad}</Project>
+      <Name>Years.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

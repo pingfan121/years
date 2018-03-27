@@ -1,24 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using GameLib.Util;
+using System;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebGrease;
+using Years.Common;
+using Years.Common.Cache;
 using Years.IServices;
 using Years.ViewModel;
 using Years.WebCore;
-using Years.WebCore.admin;
 
 namespace Years.WebUI.Areas.admin.Controllers
 {
-   
-    public class LoginController : AdminBaseController
+
+    public class LoginController : BaseController
     {
         private readonly ICacheManager cacheManager;
-        IUserInfoServices UserInfoServices;
-        public LoginController(IUserInfoServices UserInfoServices, ICacheManager cacheManager)
+        IAdminUserInfoServices AdminUserInfoServices;
+        public LoginController(IAdminUserInfoServices UserInfoServices, ICacheManager cacheManager)
         {
-            this.UserInfoServices = UserInfoServices;
+            this.AdminUserInfoServices = UserInfoServices;
             this.cacheManager = cacheManager;
         }
 
@@ -37,32 +37,33 @@ namespace Years.WebUI.Areas.admin.Controllers
             }
             return View(uinfo);
         }
+
         [HttpPost]
-        public ActionResult Login(LoginInfoViewModels model)
+        public ActionResult Login(AdminLoginInfoViewModel model)
         {
             string vcodeFromSession = string.Empty;
             if (Session[Keys.vcode] != null)
             {
                 vcodeFromSession = Session[Keys.vcode].ToString();
             }
-            if (model.VCode.IsEmpty() || vcodeFromSession.Equals(model.VCode, StringComparison.OrdinalIgnoreCase) == false)
+            if (model.vcode=="" || vcodeFromSession.Equals(model.vcode, StringComparison.OrdinalIgnoreCase) == false)
             {
                 return WriteError("验证码不合法");
             }
-            var userinfo = UserInfoServices.QueryWhere(c => c.uLoginName == model.uLoginName && c.uLoginPWD == model.uLoginPwd).FirstOrDefault();
+            var userinfo = AdminUserInfoServices.QueryWhere(c => c.name == model.login_name && c.pass == model.login_pass).FirstOrDefault();
             if (userinfo == null)
             {
                 return WriteError("用户名或者密码错误");
             }
             // Session[Keys.uinfo] = userinfo;
             //改用redis缓存
-            string sessionId = Guid.NewGuid().ToString("N");//必须保证Memcache的key唯一
+            string sessionId = ObjectId.NewObjectId().ToString();//必须保证Memcache的key唯一
             cacheManager.Set(sessionId, userinfo, TimeSpan.FromHours(1));
             Response.Cookies[Keys.uinfo].Value = sessionId;//将自创的用户信息以Cookie的形式返回给浏览器。
 
-            if (model.IsMember)
+            if (model.is_member)
             {
-                HttpCookie cookie = new HttpCookie(Keys.IsMember, userinfo.uID.ToString());
+                HttpCookie cookie = new HttpCookie(Keys.IsMember, userinfo.id);
                 cookie.Expires = DateTime.Now.AddDays(3);
                 Response.Cookies.Add(cookie);
             }

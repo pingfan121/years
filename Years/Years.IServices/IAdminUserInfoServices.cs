@@ -7,7 +7,7 @@ using Years.Model;
 
 namespace Years.IServices
 {
-    public interface IAdminuserInfoService : IBaseServices<AdminUserInfo>
+    public interface IAdminUserInfoServices : IBaseServices<AdminUserInfo>
     {
     }
 }
