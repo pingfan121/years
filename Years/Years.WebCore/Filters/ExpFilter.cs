@@ -37,13 +37,13 @@ namespace Years.WebCore.Filters
             else
             {
                 Log.error("Error", exp);
-                ViewResult vireResult = new ViewResult();
-                vireResult.ViewName = "/Views/Shared/Error.cshtml";
-                filterContext.Result = vireResult;
+                //ViewResult vireResult = new ViewResult();
+                //vireResult.ViewName = "/Views/Shared/Error.cshtml";
+                //filterContext.Result = vireResult;
             }
 
             //告诉MVC框架异常被处理
-            filterContext.ExceptionHandled = true;
+          //  filterContext.ExceptionHandled = true;
             base.OnException(filterContext);
         }
     }

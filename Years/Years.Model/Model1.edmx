@@ -17,7 +17,19 @@
           <Property Name="real_name" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="sex" Type="int" Nullable="false" />
           <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
-          <Property Name="intro" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="remark" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="state" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="advertisement">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="img_url" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="url" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="remark" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="blog_article">
           <Key>
@@ -33,6 +45,20 @@
           <Property Name="update_time" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="remark" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="guest_book">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="blog_id" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="create_time" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="user_name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="24" Nullable="false" />
+          <Property Name="qq" Type="varchar" MaxLength="24" Nullable="false" />
+          <Property Name="body" Type="text" Nullable="false" />
+          <Property Name="ip" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="is_show" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="user_info">
           <Key>
@@ -50,7 +76,9 @@
         </EntityType>
         <EntityContainer Name="yearsModelStoreContainer">
           <EntitySet Name="admin_user_info" EntityType="Self.admin_user_info" Schema="years" store:Type="Tables" />
+          <EntitySet Name="advertisement" EntityType="Self.advertisement" Schema="years" store:Type="Tables" />
           <EntitySet Name="blog_article" EntityType="Self.blog_article" Schema="years" store:Type="Tables" />
+          <EntitySet Name="guest_book" EntityType="Self.guest_book" Schema="years" store:Type="Tables" />
           <EntitySet Name="user_info" EntityType="Self.user_info" Schema="years" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -61,6 +89,8 @@
           <EntitySet Name="user_info" EntityType="yearsModel.UserInfo" />
           <EntitySet Name="blog_article" EntityType="yearsModel.BlogArticle" />
           <EntitySet Name="admin_user_info" EntityType="yearsModel.AdminUserInfo" />
+          <EntitySet Name="advertisement" EntityType="yearsModel.Advertisement" />
+          <EntitySet Name="guest_book" EntityType="yearsModel.GuestBook" />
         </EntityContainer>
         <EntityType Name="UserInfo">
           <Key>
@@ -103,7 +133,33 @@
           <Property Name="real_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="sex" Type="Int32" Nullable="false" />
           <Property Name="create_time" Type="DateTime" Nullable="false" />
-          <Property Name="intro" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="remark" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="state" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Advertisement">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" />
+          <Property Name="img_url" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="url" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="remark" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="GuestBook">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="blog_id" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="create_time" Type="DateTime" Nullable="false" />
+          <Property Name="user_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="qq" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="body" Type="String" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Name="ip" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="is_show" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -145,7 +201,8 @@
           <EntitySetMapping Name="admin_user_info">
             <EntityTypeMapping TypeName="yearsModel.AdminUserInfo">
               <MappingFragment StoreEntitySet="admin_user_info">
-                <ScalarProperty Name="intro" ColumnName="intro" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
                 <ScalarProperty Name="create_time" ColumnName="create_time" />
                 <ScalarProperty Name="sex" ColumnName="sex" />
                 <ScalarProperty Name="real_name" ColumnName="real_name" />
@@ -153,6 +210,33 @@
                 <ScalarProperty Name="pass" ColumnName="pass" />
                 <ScalarProperty Name="mail" ColumnName="mail" />
                 <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="advertisement">
+            <EntityTypeMapping TypeName="yearsModel.Advertisement">
+              <MappingFragment StoreEntitySet="advertisement">
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="img_url" ColumnName="img_url" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guest_book">
+            <EntityTypeMapping TypeName="yearsModel.GuestBook">
+              <MappingFragment StoreEntitySet="guest_book">
+                <ScalarProperty Name="is_show" ColumnName="is_show" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="body" ColumnName="body" />
+                <ScalarProperty Name="qq" ColumnName="qq" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="blog_id" ColumnName="blog_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

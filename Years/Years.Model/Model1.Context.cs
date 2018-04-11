@@ -28,5 +28,7 @@ namespace Years.Model
         public virtual DbSet<UserInfo> user_info { get; set; }
         public virtual DbSet<BlogArticle> blog_article { get; set; }
         public virtual DbSet<AdminUserInfo> admin_user_info { get; set; }
+        public virtual DbSet<Advertisement> advertisement { get; set; }
+        public virtual DbSet<GuestBook> guest_book { get; set; }
     }
 }

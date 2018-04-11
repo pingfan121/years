@@ -1,0 +1,95 @@
+﻿<!--右边栏部分-->
+@using Years.ViewModel
+
+<aside>
+    <div class="col-md-4">
+        <section class="youbianlan">
+            <div class="panel-group">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title panel-info">
+                            <h4>最新发布</h4>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            @{
+                                if (ViewBag.blogtimelist != null)
+                                {
+                                    for (int i = 0; i < ViewBag.blogtimelist.Count; i++)
+                                    {
+                                        <li><a href="/blog/Detail/@ViewBag.blogtimelist[i].id">@ViewBag.blogtimelist[i].title</a></li>
+                                    }
+                                }
+
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="youbianlan">
+            <div class="panel-group">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title panel-info">
+                            <h4>阅读排行榜</h4>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            @{
+                                if (ViewBag.blogtrafficlist != null)
+                                {
+                                    for (int i = 0; i < ViewBag.blogtrafficlist.Count; i++)
+                                    {
+                                        <li><a href="/blog/Detail/@ViewBag.blogtrafficlist[i].bID">@ViewBag.blogtrafficlist[i].btitle</a></li>
+                                    }
+                                }
+
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="youbianlan">
+            <div class="panel-group">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="panel-title panel-info">
+                            <h4>评论排行榜</h4>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            @{
+                                List<TopgbViewModel> list = ViewBag.blogguestbooklist as List<TopgbViewModel>;
+                                if (list != null && list.Any())
+                                {
+                                    if (list.Count < 10)
+                                    {
+                                        for (int i = 0; i < list.Count; i++)
+                                        {
+                                            <li><a href="/blog/Detail/@list[i].blog_id">@list[i].title</a></li>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        for (int i = 0; i < 10; i++)
+                                        {
+                                            <li><a href="/blog/Detail/@list[i].blog_id">@list[i].title</a></li>
+                                        }
+                                    }
+
+                                }
+
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</aside>
+<!--右边栏部分结束-->

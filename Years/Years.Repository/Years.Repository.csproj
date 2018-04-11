@@ -60,6 +60,8 @@
     <Compile Include="AdminUserInfoRepository.cs" />
     <Compile Include="BaseRepository.cs" />
     <Compile Include="BlogArticleRepository.cs" />
+    <Compile Include="AdvertisementRepository.cs" />
+    <Compile Include="GuestBookRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInfoRepository.cs" />
   </ItemGroup>

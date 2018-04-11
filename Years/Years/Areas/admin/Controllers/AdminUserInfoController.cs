@@ -41,9 +41,9 @@ namespace Years.WebUI.Areas.admin.Controllers
             int draw = Request["draw"] != null ? int.Parse(Request["draw"]) : 1;
             int totalCount;
             short delFlag = 0;
-            var userInfoList = adminUserInfoService.QueryByBeginPage<int>(pageIndex, pageSize, out totalCount, r => r.uStatus == delFlag, r => r.uID, true);
+            var userInfoList = adminUserInfoService.QueryByBeginPage(pageIndex, pageSize, out totalCount, r => r.state == delFlag, r => r.id, true);
             var temp = from u in userInfoList
-                       select new { ID = u.uID, UserName = u.uLoginName, UserPwd = u.uLoginPWD, RealName = u.uRealName, subtime = u.uCreateTime, Remark = u.uRemark };
+                       select new { id = u.id, name = u.name, pass = u.pass, real_name = u.real_name, create_time = u.create_time, remark = u.remark };
             var jsonDataTemp = new
             {
                 data = temp.ToList(),

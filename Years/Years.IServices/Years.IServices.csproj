@@ -50,8 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAdminUserInfoServices.cs" />
+    <Compile Include="IAdvertisementServices.cs" />
     <Compile Include="IBaseServices.cs" />
     <Compile Include="IBlogArticleServices.cs" />
+    <Compile Include="IGuestBookService.cs" />
     <Compile Include="IUserInfoServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

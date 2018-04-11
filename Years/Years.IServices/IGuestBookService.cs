@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Years.Model;
 
-namespace Years.ViewModel
+namespace Years.IServices
 {
-    public class Class1
+    public interface IGuestBookService:IBaseServices<GuestBook>
     {
+
     }
 }

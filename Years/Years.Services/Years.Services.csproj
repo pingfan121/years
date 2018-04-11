@@ -55,8 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminUserInfoService.cs" />
+    <Compile Include="AdvertisementServices.cs" />
     <Compile Include="BaseServices.cs" />
     <Compile Include="BlogArticleServices.cs" />
+    <Compile Include="GuestBookService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInfoServices.cs" />
   </ItemGroup>

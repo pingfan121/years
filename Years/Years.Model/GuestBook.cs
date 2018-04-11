@@ -12,17 +12,16 @@ namespace Years.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class AdminUserInfo
+    public partial class GuestBook
     {
         public string id { get; set; }
-        public string mobile { get; set; }
-        public string mail { get; set; }
-        public string pass { get; set; }
-        public string name { get; set; }
-        public string real_name { get; set; }
-        public int sex { get; set; }
+        public string blog_id { get; set; }
         public System.DateTime create_time { get; set; }
-        public string remark { get; set; }
-        public int state { get; set; }
+        public string user_name { get; set; }
+        public string phone { get; set; }
+        public string qq { get; set; }
+        public string body { get; set; }
+        public string ip { get; set; }
+        public string is_show { get; set; }
     }
 }

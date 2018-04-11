@@ -12,17 +12,13 @@ namespace Years.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class AdminUserInfo
+    public partial class Advertisement
     {
-        public string id { get; set; }
-        public string mobile { get; set; }
-        public string mail { get; set; }
-        public string pass { get; set; }
-        public string name { get; set; }
-        public string real_name { get; set; }
-        public int sex { get; set; }
+        public int id { get; set; }
         public System.DateTime create_time { get; set; }
+        public string img_url { get; set; }
+        public string title { get; set; }
+        public string url { get; set; }
         public string remark { get; set; }
-        public int state { get; set; }
     }
 }
