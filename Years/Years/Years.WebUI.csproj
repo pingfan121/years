@@ -191,6 +191,7 @@
     <Compile Include="Areas\admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\admin\Controllers\VcodeController.cs" />
+    <Compile Include="Controllers\Home2Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -707,6 +708,11 @@
     <Content Include="Views\Shared\_NavbarPage.cshtml" />
     <Content Include="Views\Shared\_RightPage.cshtml" />
     <Content Include="Views\Shared\_FooterPage.cshtml" />
+    <Content Include="Views\Home2\About.cshtml" />
+    <Content Include="Views\Home2\Contact.cshtml" />
+    <Content Include="Views\Home2\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Shared\_NavbarPage2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
