@@ -1,0 +1,102 @@
+﻿@model PagedList<Years.Model.BlogArticle>
+@using Webdiyer.WebControls.Mvc
+@{
+    ViewBag.Title = "首页";
+}
+
+<section id="lunbotu">
+    <div id="myNiceCarousel" class="carousel slide" data-ride="carousel">
+        <!-- 圆点指示器 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myNiceCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myNiceCarousel" data-slide-to="1"></li>
+            <li data-target="#myNiceCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- 轮播项目 -->
+        <div class="carousel-inner">
+            @foreach (var item in ViewBag.adList)
+            {
+                if (item == ViewBag.adList[0])
+                {
+                    <div class="item active">
+                        <a href="@item.url" title="@item.title" target="_blank">
+                            <img alt="First slide" src="@item.img_url">
+                        </a>
+                        <div class="carousel-caption">
+                            <h3>@item.title</h3>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="item">
+                        <a href="@item.url" title="@item.title" target="_blank">
+                            <img alt="Second slide" src="@item.img_url">
+                        </a>
+
+                        <div class="carousel-caption">
+                            <h3>@item.title</h3>
+                        </div>
+                    </div>
+                }
+            }
+            @*<div class="item active">
+                    <a href="http://www.baidu.com" title="baidu" target="_blank">
+                        <img alt="First slide" src="/upload/20161006/1.jpg">
+                    </a>
+                    <div class="carousel-caption">
+                        <h3>我是第一张幻灯片</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <img alt="Second slide" src="/upload/20161006/2.jpg">
+                    <div class="carousel-caption">
+                        <h3>我是第二张幻灯片</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <img alt="Third slide" src="/upload/20161006/3.jpg">
+                    <div class="carousel-caption">
+                        <h3>我是第三张幻灯片</h3>
+                    </div>
+                </div>*@
+        </div>
+
+        <!-- 项目切换按钮 -->
+        <a class="left carousel-control" href="#myNiceCarousel" data-slide="prev">
+            <span class="icon icon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#myNiceCarousel" data-slide="next">
+            <span class="icon icon-chevron-right"></span>
+        </a>
+    </div>
+</section>
+<section id="boke">
+    @foreach (var item in Model)
+    {
+        <div class="day">
+            <div class="dayTitle">
+                <a class="btn btn-primary">@item.create_time.ToString("yyyy年MM月dd日")</a>
+            </div>
+            <div class="postTitle">
+                <a id="1" class="postTitle2" href="/blog/Detail/@item.id">@item.title</a>
+            </div>
+            <div class="postCon">
+                <div class="c_b_p_desc">
+                    摘要：@item.content......
+                    <a href="/blog/Detail/@item.id" class="btn btn-primary">阅读全文</a>
+                </div>
+            </div>
+            <div class="postDesc">
+                <p>posted @@ @item.create_time @item.submitter 阅读(@item.traffic) 评论(@item.comment_num)  </p>
+            </div>
+        </div>
+    }
+
+    <footer class="pagination">
+        @Ajax.Pager(Model, new PagerOptions { PageIndexParameterName = "pageindex", ContainerTagName = "ul", CssClass = "pager", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>" }, new MvcAjaxOptions { UpdateTargetId = "boke", OnBegin = "alert('onbegin事件引发')", OnSuccess = "handleSuccess", OnComplete = "function(xhr,status){alert('oncomplete事件引发，Http响应代码：'+xhr.status+'，响应内容：'+xhr.statusText+'，状态代码：'+status)}", OnFailure = "handleFailure" })
+        @*@Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pageindex", ContainerTagName = "ul", CssClass = "pager", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>" })*@
+        @*@Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pageindex", CurrentPagerItemTemplate = "<span class=\"current\">{0}</span>", DisabledPagerItemTemplate = "<span class=\"disabled\">{0}</span>", Id = "badoopager" })*@
+    </footer>
+</section>

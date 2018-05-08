@@ -1,0 +1,805 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33C72AE8-5E52-47C1-B792-C607915E371A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Years.WebUI</RootNamespace>
+    <AssemblyName>Years.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.11\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.11\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Webdiyer.MvcPager, Version=3.0.2015.802, Culture=neutral, PublicKeyToken=f6872c5a09aed72c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Webdiyer.MvcPager.3.0.1.1\lib\Webdiyer.MvcPager.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AutofacConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\admin\adminAreaRegistration.cs" />
+    <Compile Include="Areas\admin\Controllers\AdminUserInfoController.cs" />
+    <Compile Include="Areas\admin\Controllers\AdvertisementController.cs" />
+    <Compile Include="Areas\admin\Controllers\BlogArticleController.cs" />
+    <Compile Include="Areas\admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\admin\Controllers\VcodeController.cs" />
+    <Compile Include="Controllers\Home2Controller.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CSS\animate.css" />
+    <Content Include="Content\CSS\BlogArticleStyle.css" />
+    <Content Include="Content\CSS\bootstrap.min.css" />
+    <Content Include="Content\CSS\HomeIndex.css" />
+    <Content Include="Content\CSS\index.css" />
+    <Content Include="Content\CSS\jquery.dataTables.css" />
+    <Content Include="Content\CSS\login.css" />
+    <Content Include="Content\CSS\matrix-media.css" />
+    <Content Include="Content\CSS\matrix-style.css" />
+    <Content Include="Content\CSS\pagerstyles.css" />
+    <Content Include="Content\CSS\style.css" />
+    <Content Include="Content\CSS\userStyle.css" />
+    <Content Include="Content\CSS\welcome.css" />
+    <Content Include="Content\CSS\zui-blog-theme.css" />
+    <Content Include="Content\CSS\zui-theme-blue.css" />
+    <Content Include="Content\CSS\zui-theme.css" />
+    <Content Include="Content\CSS\zui.css" />
+    <Content Include="Content\images\login_bk.jpg" />
+    <Content Include="Content\JS\colResizable-1.5.min.js" />
+    <Content Include="Content\JS\common.js" />
+    <Content Include="Content\JS\index.js" />
+    <Content Include="Content\JS\jquery-1.12.4.min.js" />
+    <Content Include="Content\JS\zui.js" />
+    <Content Include="Content\lib\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\lib\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\lib\DataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\lib\DataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\lib\DataTables\css\dataTables.foundation.css" />
+    <Content Include="Content\lib\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="Content\lib\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\lib\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\lib\DataTables\css\dataTables.material.css" />
+    <Content Include="Content\lib\DataTables\css\dataTables.material.min.css" />
+    <Content Include="Content\lib\DataTables\css\dataTables.semanticui.css" />
+    <Content Include="Content\lib\DataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\lib\DataTables\css\dataTables.uikit.css" />
+    <Content Include="Content\lib\DataTables\css\dataTables.uikit.min.css" />
+    <Content Include="Content\lib\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\lib\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\lib\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\lib\DataTables\images\favicon.ico" />
+    <Content Include="Content\lib\DataTables\images\sort_asc.png" />
+    <Content Include="Content\lib\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\lib\DataTables\images\sort_both.png" />
+    <Content Include="Content\lib\DataTables\images\sort_desc.png" />
+    <Content Include="Content\lib\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\lib\DataTables\js\dataTables.bootstrap.js" />
+    <Content Include="Content\lib\DataTables\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\lib\DataTables\js\dataTables.bootstrap4.js" />
+    <Content Include="Content\lib\DataTables\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Content\lib\DataTables\js\dataTables.foundation.js" />
+    <Content Include="Content\lib\DataTables\js\dataTables.foundation.min.js" />
+    <Content Include="Content\lib\DataTables\js\dataTables.jqueryui.js" />
+    <Content Include="Content\lib\DataTables\js\dataTables.jqueryui.min.js" />
+    <Content Include="Content\lib\DataTables\js\dataTables.material.js" />
+    <Content Include="Content\lib\DataTables\js\dataTables.material.min.js" />
+    <Content Include="Content\lib\DataTables\js\dataTables.semanticui.js" />
+    <Content Include="Content\lib\DataTables\js\dataTables.semanticui.min.js" />
+    <Content Include="Content\lib\DataTables\js\dataTables.uikit.js" />
+    <Content Include="Content\lib\DataTables\js\dataTables.uikit.min.js" />
+    <Content Include="Content\lib\DataTables\js\jquery.dataTables.js" />
+    <Content Include="Content\lib\DataTables\js\jquery.dataTables.min.js" />
+    <Content Include="Content\lib\DataTables\js\jquery.js" />
+    <Content Include="Content\lib\Echarts\china.js" />
+    <Content Include="Content\lib\Echarts\echarts.js" />
+    <Content Include="Content\lib\Echarts\echarts.min.js" />
+    <Content Include="Content\lib\Echarts\macarons.js" />
+    <Content Include="Content\lib\ieonly\excanvas.js" />
+    <Content Include="Content\lib\ieonly\html5shiv.js" />
+    <Content Include="Content\lib\ieonly\respond.js" />
+    <Content Include="Content\lib\jeDate\jedate\jedate.js" />
+    <Content Include="Content\lib\jeDate\jedate\jedate.min.js" />
+    <Content Include="Content\lib\jeDate\jedate\jquery-1.7.2.js" />
+    <Content Include="Content\lib\jeDate\jedate\jquery.jedate.js" />
+    <Content Include="Content\lib\jeDate\jedate\jquery.jedate.min.js" />
+    <Content Include="Content\lib\jeDate\jedate\skin\gray.css" />
+    <Content Include="Content\lib\jeDate\jedate\skin\green.css" />
+    <Content Include="Content\lib\jeDate\jedate\skin\jedate.css" />
+    <Content Include="Content\lib\jeDate\jedate\skin\red.css" />
+    <Content Include="Content\lib\jeDate\jquery-test.html" />
+    <Content Include="Content\lib\jeDate\test.html" />
+    <Content Include="Content\lib\layer\layer.js" />
+    <Content Include="Content\lib\layer\mobile\layer.js" />
+    <Content Include="Content\lib\layer\mobile\need\layer.css" />
+    <Content Include="Content\lib\layer\skin\default\icon-ext.png" />
+    <Content Include="Content\lib\layer\skin\default\icon.png" />
+    <Content Include="Content\lib\layer\skin\default\layer.css" />
+    <Content Include="Content\lib\layer\skin\default\loading-0.gif" />
+    <Content Include="Content\lib\layer\skin\default\loading-1.gif" />
+    <Content Include="Content\lib\layer\skin\default\loading-2.gif" />
+    <Content Include="Content\lib\layer\skin\moon\default.png" />
+    <Content Include="Content\lib\layer\skin\moon\style.css" />
+    <Content Include="Content\lib\laypage\laypage.js" />
+    <Content Include="Content\lib\laypage\skin\laypage.css" />
+    <Content Include="Content\lib\metisMenu\metisMenu.css" />
+    <Content Include="Content\lib\metisMenu\metisMenu.js" />
+    <Content Include="Content\lib\plupload\examples\custom.html" />
+    <Content Include="Content\lib\plupload\examples\events.html" />
+    <Content Include="Content\lib\plupload\examples\jquery\all_runtimes.html" />
+    <Content Include="Content\lib\plupload\examples\jquery\jquery_ui_widget.html" />
+    <Content Include="Content\lib\plupload\examples\jquery\queue_widget.html" />
+    <Content Include="Content\lib\plupload\js\i18n\ar.js" />
+    <Content Include="Content\lib\plupload\js\i18n\az.js" />
+    <Content Include="Content\lib\plupload\js\i18n\bg.js" />
+    <Content Include="Content\lib\plupload\js\i18n\bs.js" />
+    <Content Include="Content\lib\plupload\js\i18n\ca.js" />
+    <Content Include="Content\lib\plupload\js\i18n\cs.js" />
+    <Content Include="Content\lib\plupload\js\i18n\cy.js" />
+    <Content Include="Content\lib\plupload\js\i18n\da.js" />
+    <Content Include="Content\lib\plupload\js\i18n\de.js" />
+    <Content Include="Content\lib\plupload\js\i18n\el.js" />
+    <Content Include="Content\lib\plupload\js\i18n\en.js" />
+    <Content Include="Content\lib\plupload\js\i18n\es.js" />
+    <Content Include="Content\lib\plupload\js\i18n\et.js" />
+    <Content Include="Content\lib\plupload\js\i18n\fa.js" />
+    <Content Include="Content\lib\plupload\js\i18n\fi.js" />
+    <Content Include="Content\lib\plupload\js\i18n\fr.js" />
+    <Content Include="Content\lib\plupload\js\i18n\he.js" />
+    <Content Include="Content\lib\plupload\js\i18n\hr.js" />
+    <Content Include="Content\lib\plupload\js\i18n\hu.js" />
+    <Content Include="Content\lib\plupload\js\i18n\hy.js" />
+    <Content Include="Content\lib\plupload\js\i18n\id.js" />
+    <Content Include="Content\lib\plupload\js\i18n\it.js" />
+    <Content Include="Content\lib\plupload\js\i18n\ja.js" />
+    <Content Include="Content\lib\plupload\js\i18n\ka.js" />
+    <Content Include="Content\lib\plupload\js\i18n\kk.js" />
+    <Content Include="Content\lib\plupload\js\i18n\km.js" />
+    <Content Include="Content\lib\plupload\js\i18n\ko.js" />
+    <Content Include="Content\lib\plupload\js\i18n\ku_IQ.js" />
+    <Content Include="Content\lib\plupload\js\i18n\lt.js" />
+    <Content Include="Content\lib\plupload\js\i18n\lv.js" />
+    <Content Include="Content\lib\plupload\js\i18n\ms.js" />
+    <Content Include="Content\lib\plupload\js\i18n\nl.js" />
+    <Content Include="Content\lib\plupload\js\i18n\pl.js" />
+    <Content Include="Content\lib\plupload\js\i18n\pt.js" />
+    <Content Include="Content\lib\plupload\js\i18n\pt_BR.js" />
+    <Content Include="Content\lib\plupload\js\i18n\ro.js" />
+    <Content Include="Content\lib\plupload\js\i18n\ru.js" />
+    <Content Include="Content\lib\plupload\js\i18n\sk.js" />
+    <Content Include="Content\lib\plupload\js\i18n\sl.js" />
+    <Content Include="Content\lib\plupload\js\i18n\sq.js" />
+    <Content Include="Content\lib\plupload\js\i18n\sr.js" />
+    <Content Include="Content\lib\plupload\js\i18n\sv.js" />
+    <Content Include="Content\lib\plupload\js\i18n\th_TH.js" />
+    <Content Include="Content\lib\plupload\js\i18n\tr.js" />
+    <Content Include="Content\lib\plupload\js\i18n\uk_UA.js" />
+    <Content Include="Content\lib\plupload\js\i18n\vi.js" />
+    <Content Include="Content\lib\plupload\js\i18n\zh_CN.js" />
+    <Content Include="Content\lib\plupload\js\i18n\zh_TW.js" />
+    <Content Include="Content\lib\plupload\js\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="Content\lib\plupload\js\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="Content\lib\plupload\js\jquery.plupload.queue\img\buttons-disabled.png" />
+    <Content Include="Content\lib\plupload\js\jquery.plupload.queue\img\buttons.png" />
+    <Content Include="Content\lib\plupload\js\jquery.plupload.queue\img\delete.gif" />
+    <Content Include="Content\lib\plupload\js\jquery.plupload.queue\img\done.gif" />
+    <Content Include="Content\lib\plupload\js\jquery.plupload.queue\img\error.gif" />
+    <Content Include="Content\lib\plupload\js\jquery.plupload.queue\img\throbber.gif" />
+    <Content Include="Content\lib\plupload\js\jquery.plupload.queue\img\transp50.png" />
+    <Content Include="Content\lib\plupload\js\jquery.plupload.queue\jquery.plupload.queue.js" />
+    <Content Include="Content\lib\plupload\js\jquery.plupload.queue\jquery.plupload.queue.min.js" />
+    <Content Include="Content\lib\plupload\js\jquery.ui.plupload\css\jquery.ui.plupload.css" />
+    <Content Include="Content\lib\plupload\js\jquery.ui.plupload\img\loading.gif" />
+    <Content Include="Content\lib\plupload\js\jquery.ui.plupload\img\plupload.png" />
+    <Content Include="Content\lib\plupload\js\jquery.ui.plupload\jquery.ui.plupload.js" />
+    <Content Include="Content\lib\plupload\js\jquery.ui.plupload\jquery.ui.plupload.min.js" />
+    <Content Include="Content\lib\plupload\js\moxie.js" />
+    <Content Include="Content\lib\plupload\js\moxie.min.js" />
+    <Content Include="Content\lib\plupload\js\Moxie.swf" />
+    <Content Include="Content\lib\plupload\js\Moxie.xap" />
+    <Content Include="Content\lib\plupload\js\plupload.dev.js" />
+    <Content Include="Content\lib\plupload\js\plupload.full.min.js" />
+    <Content Include="Content\lib\plupload\js\plupload.min.js" />
+    <Content Include="Content\lib\plupload\license.txt" />
+    <Content Include="Content\lib\wangEditor\dist\css\fonts\icomoon.svg" />
+    <Content Include="Content\lib\wangEditor\dist\css\wangEditor.css" />
+    <Content Include="Content\lib\wangEditor\dist\css\wangEditor.min.css" />
+    <Content Include="Content\lib\wangEditor\dist\fonts\icomoon.svg" />
+    <Content Include="Content\lib\wangEditor\dist\js\lib\jquery-1.10.2.min.js" />
+    <Content Include="Content\lib\wangEditor\dist\js\lib\jquery-2.2.1.js" />
+    <Content Include="Content\lib\wangEditor\dist\js\wangEditor.js" />
+    <Content Include="Content\lib\wangEditor\dist\js\wangEditor.min.js" />
+    <Content Include="Content\lib\wangEditor\Gruntfile.js" />
+    <Content Include="Content\lib\wangEditor\node_modules\formidable\index.js" />
+    <Content Include="Content\lib\wangEditor\node_modules\formidable\lib\file.js" />
+    <Content Include="Content\lib\wangEditor\node_modules\formidable\lib\incoming_form.js" />
+    <Content Include="Content\lib\wangEditor\node_modules\formidable\lib\index.js" />
+    <Content Include="Content\lib\wangEditor\node_modules\formidable\lib\json_parser.js" />
+    <Content Include="Content\lib\wangEditor\node_modules\formidable\lib\multipart_parser.js" />
+    <Content Include="Content\lib\wangEditor\node_modules\formidable\lib\octet_parser.js" />
+    <Content Include="Content\lib\wangEditor\node_modules\formidable\lib\querystring_parser.js" />
+    <Content Include="Content\lib\wangEditor\server-for-cros.js" />
+    <Content Include="Content\lib\wangEditor\server.js" />
+    <Content Include="Content\lib\wangEditor\src\css\wangEditor.css" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00100-start.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00200-E.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00201-E-fn-init.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00202-E-fn-api.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00203-E-fn-selection.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00204-E-fn-selection-IE.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00205-E-fn-command-hooks.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00205-E-fn-command.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00206-E-fn-dom-selector.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00207-E-fn-undo-redo.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0020x-E-fn-user-api.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00210-MC.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00211-MC-fn-bind.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00212-MC-fn-api.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00220-M.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00221-M-fn-bind.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00222-M-fn-api.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00230-DL.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00231-DL-fn-bind.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00232-DL-fn-api.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00240-DP.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00241-DP-fn-bind.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00242-DP-fn-api.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00250-ML.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00251-ML-fn-bind.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00252-ML-fn-api.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00260-T.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00261-T-fn-bind.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00262-T-fn-api.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00300-E-tool-fn.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00310-E-lang.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00400-E-config.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00401-E-UI.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00500-editor-default-config-UI.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00601-editor-add-editor-container.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00602-editor-add-txt.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00700-editor-add-menuContainer.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00800-editor-add-menus.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00810-editor-add-menu-bold.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00820-editor-add-menu-underline.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00830-editor-add-menu-italic.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00840-editor-add-menu-forecolor.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00850-editor-add-menu-bgcolor.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00850-editor-add-menu-strikethrough.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00860-editor-add-menu-eraser.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00870-editor-add-menu-source.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00880-editor-add-menu-quote.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00890-editor-add-menu-family.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008a0-editor-add-menu-fontsize.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008b0-editor-add-menu-head.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008c1-editor-add-menu-unorder-list.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008c2-editor-add-menu-order-list.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008d1-editor-add-menu-align-left.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008d2-editor-add-menu-align-center.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008d3-editor-add-menu-align-right.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008e0-editor-add-menu-link.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008f0-editor-add-menu-unlink.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008g0-editor-add-menu-table.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008h0-editor-add-menu-emotion.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008i0-editor-add-menu-img.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008j0-editor-add-menu-video.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008k0-editor-add-menu-location.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008lo-editor-add-menu-insertcode.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008m0-editor-add-menu-undo.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008n0-editor-add-menu-redo.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\008o0-editor-add-menu-fullscreen.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00900-render-menus.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00910-render-menu-container.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00920-render-txt.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\00930-render-container.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\01000-event-menus.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\01010-event-menuContainer.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\01020-event-txt.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p000-upload-img-fn.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p010-xhr-upload-img.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p011-upload-progress.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p020-upload-img-ui.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p021-upload-img-h5.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p022-upload-img-form.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p023-upload-img-paste.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p024-drag-upload-img.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p030-txt-table-toolbar.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p040-txt-img-toolbar.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p041-txt-link-toolbar.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p050-menu-fixed.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p060-custom-menu-indent.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p060-custom-menu-lineheight.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\0p070-custom-upload.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\9xxxx-copyright.js" />
+    <Content Include="Content\lib\wangEditor\src\js\parts\9zzzz-end.js" />
+    <Content Include="Content\lib\wangEditor\src\js\wangEditor.js" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\1.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\10.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\11.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\12.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\13.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\14.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\15.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\16.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\17.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\18.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\19.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\2.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\20.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\21.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\22.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\23.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\24.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\25.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\26.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\27.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\28.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\29.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\3.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\30.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\31.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\32.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\33.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\34.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\35.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\36.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\37.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\38.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\39.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\4.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\40.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\41.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\42.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\43.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\44.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\45.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\46.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\47.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\48.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\49.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\5.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\50.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\6.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\7.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\8.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\default\9.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\jinxing\1.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\jinxing\2.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\jinxing\3.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\jinxing\4.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\jinxing\5.gif" />
+    <Content Include="Content\lib\wangEditor\static\emotions\jinxing\6.gif" />
+    <Content Include="Content\lib\wangEditor\static\highlightjs\dark.css" />
+    <Content Include="Content\lib\wangEditor\static\highlightjs\github.css" />
+    <Content Include="Content\lib\wangEditor\static\highlightjs\highlight.pack.js" />
+    <Content Include="Content\lib\wangEditor\test\angular\test-angular.html" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\css\bootstrap-theme.css" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\css\bootstrap-theme.min.css" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\css\bootstrap.css" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\css\bootstrap.min.css" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\js\bootstrap.js" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\js\bootstrap.min.js" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\js\npm.js" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\test-bs-modal.html" />
+    <Content Include="Content\lib\wangEditor\test\custom-menu\custom-menu.html" />
+    <Content Include="Content\lib\wangEditor\test\custom-menu\js\custom-menu-1.js" />
+    <Content Include="Content\lib\wangEditor\test\custom-menu\js\custom-menu-2.js" />
+    <Content Include="Content\lib\wangEditor\test\custom-menu\js\custom-menu.js" />
+    <Content Include="Content\lib\wangEditor\test\custom-menu\js\require-main.js" />
+    <Content Include="Content\lib\wangEditor\test\icomoon\demo-files\demo.css" />
+    <Content Include="Content\lib\wangEditor\test\icomoon\demo-files\demo.js" />
+    <Content Include="Content\lib\wangEditor\test\icomoon\demo.html" />
+    <Content Include="Content\lib\wangEditor\test\icomoon\fonts\icomoon.svg" />
+    <Content Include="Content\lib\wangEditor\test\icomoon\Read Me.txt" />
+    <Content Include="Content\lib\wangEditor\test\icomoon\style.css" />
+    <Content Include="Content\lib\wangEditor\test\index.html" />
+    <Content Include="Content\lib\wangEditor\test\plupload\lib\plupload\Moxie.swf" />
+    <Content Include="Content\lib\wangEditor\test\plupload\lib\plupload\Moxie.xap" />
+    <Content Include="Content\lib\wangEditor\test\plupload\lib\plupload\plupload.full.min.js" />
+    <Content Include="Content\lib\wangEditor\test\plupload\test.html" />
+    <Content Include="Content\lib\wangEditor\test\requirejs\js\main.js" />
+    <Content Include="Content\lib\wangEditor\test\requirejs\js\require.js" />
+    <Content Include="Content\lib\wangEditor\test\requirejs\test-requirejs.html" />
+    <Content Include="Content\lib\wangEditor\test\seajs\js\jquery-2.2.1-for-seajs.js" />
+    <Content Include="Content\lib\wangEditor\test\seajs\js\sea.js" />
+    <Content Include="Content\lib\wangEditor\test\seajs\main.js" />
+    <Content Include="Content\lib\wangEditor\test\seajs\test-seajs.html" />
+    <Content Include="Content\lib\wangEditor\test\step-test\test1.html" />
+    <Content Include="Content\lib\wangEditor\test\step-test\test2.html" />
+    <Content Include="Content\lib\wangEditor\test\test-createbyelem.html" />
+    <Content Include="Content\lib\wangEditor\test\test-js-head.html" />
+    <Content Include="Content\lib\wangEditor\test\test-lang.html" />
+    <Content Include="Content\lib\wangEditor\test\test-menus.html" />
+    <Content Include="Content\lib\wangEditor\test\test-muti.html" />
+    <Content Include="Content\lib\wangEditor\test\test-style.html" />
+    <Content Include="Content\lib\wangEditor\test\test-uploadfn.html" />
+    <Content Include="Content\lib\wangEditor\test\vue\test-vue.html" />
+    <Content Include="Content\lib\wangEditor\test\z-test.html" />
+    <Content Include="Content\lib\webuploader\dist\Uploader.swf" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.css" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.custom.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.custom.min.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.fis.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.flashonly.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.flashonly.min.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.html5nodepend.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.html5only.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.html5only.min.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.min.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.noimage.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.noimage.min.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.nolog.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.nolog.min.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.withoutimage.js" />
+    <Content Include="Content\lib\webuploader\dist\webuploader.withoutimage.min.js" />
+    <Content Include="Content\lib\zui\doc.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\log4net.conf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\admin\Views\web.config" />
+    <Content Include="Areas\admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\admin\Views\Shared\_sidebar.cshtml" />
+    <Content Include="Content\lib\DataTables\images\Sorting icons.psd" />
+    <Content Include="Content\lib\plupload\examples\dump.php" />
+    <Content Include="Content\lib\plupload\examples\jquery\s3.php" />
+    <Content Include="Content\lib\plupload\examples\upload.php" />
+    <Content Include="Content\lib\plupload\readme.md" />
+    <Content Include="Content\lib\wangEditor\.gitattributes" />
+    <Content Include="Content\lib\wangEditor\.gitignore" />
+    <Content Include="Content\lib\wangEditor\.jshintrc" />
+    <Content Include="Content\lib\wangEditor\.npmignore" />
+    <Content Include="Content\lib\wangEditor\bower.json" />
+    <Content Include="Content\lib\wangEditor\dist\css\fonts\icomoon.eot" />
+    <Content Include="Content\lib\wangEditor\dist\css\fonts\icomoon.ttf" />
+    <Content Include="Content\lib\wangEditor\dist\css\fonts\icomoon.woff" />
+    <Content Include="Content\lib\wangEditor\dist\css\wangEditor.less" />
+    <Content Include="Content\lib\wangEditor\dist\fonts\icomoon.eot" />
+    <Content Include="Content\lib\wangEditor\dist\fonts\icomoon.ttf" />
+    <Content Include="Content\lib\wangEditor\dist\fonts\icomoon.woff" />
+    <Content Include="Content\lib\wangEditor\LICENSE" />
+    <Content Include="Content\lib\wangEditor\node_modules\formidable\.npmignore" />
+    <Content Include="Content\lib\wangEditor\node_modules\formidable\.travis.yml" />
+    <Content Include="Content\lib\wangEditor\node_modules\formidable\LICENSE" />
+    <Content Include="Content\lib\wangEditor\node_modules\formidable\package.json" />
+    <Content Include="Content\lib\wangEditor\node_modules\formidable\Readme.md" />
+    <Content Include="Content\lib\wangEditor\package.json" />
+    <Content Include="Content\lib\wangEditor\README.md" />
+    <Content Include="Content\lib\wangEditor\src\css\parts\010-common.less" />
+    <Content Include="Content\lib\wangEditor\src\css\parts\020-home.less" />
+    <Content Include="Content\lib\wangEditor\src\css\parts\021-fullscreen.less" />
+    <Content Include="Content\lib\wangEditor\src\css\parts\022-sourcecode.less" />
+    <Content Include="Content\lib\wangEditor\src\css\parts\030-menu.less" />
+    <Content Include="Content\lib\wangEditor\src\css\parts\040-txt.less" />
+    <Content Include="Content\lib\wangEditor\src\css\parts\041-txt-content.less" />
+    <Content Include="Content\lib\wangEditor\src\css\parts\050-droplist.less" />
+    <Content Include="Content\lib\wangEditor\src\css\parts\060-droppanel.less" />
+    <Content Include="Content\lib\wangEditor\src\css\parts\070-modal.less" />
+    <Content Include="Content\lib\wangEditor\src\css\parts\xxx-font.less" />
+    <Content Include="Content\lib\wangEditor\src\css\parts\yyy-hljs-github.less" />
+    <Content Include="Content\lib\wangEditor\src\css\wangEditor.less" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\css\bootstrap-theme.css.map" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\css\bootstrap.css.map" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\lib\wangEditor\test\bootstrap\bs-3.3.5\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\lib\wangEditor\test\emotions.data" />
+    <Content Include="Content\lib\wangEditor\test\icomoon\fonts\icomoon.eot" />
+    <Content Include="Content\lib\wangEditor\test\icomoon\fonts\icomoon.ttf" />
+    <Content Include="Content\lib\wangEditor\test\icomoon\fonts\icomoon.woff" />
+    <Content Include="Content\lib\wangEditor\test\icomoon\selection.json" />
+    <Content Include="Content\lib\wangEditor\uploadfiles\readme" />
+    <Content Include="Content\lib\webuploader\dist\README.md" />
+    <Content Include="Areas\admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\admin\Views\BlogArticle\Add.cshtml" />
+    <Content Include="Areas\admin\Views\BlogArticle\Index.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_NavbarPage.cshtml" />
+    <Content Include="Views\Shared\_RightPage.cshtml" />
+    <Content Include="Views\Shared\_FooterPage.cshtml" />
+    <Content Include="Views\Home2\About.cshtml" />
+    <Content Include="Views\Home2\Contact.cshtml" />
+    <Content Include="Views\Home2\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Shared\_NavbarPage2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\admin\Models\" />
+    <Folder Include="Areas\admin\Views\AdminUserInfo\" />
+    <Folder Include="Areas\admin\Views\Advertisement\" />
+    <Folder Include="Areas\admin\Views\Login\" />
+    <Folder Include="Areas\admin\Views\Vcode\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtilLib\UtilLib.csproj">
+      <Project>{3F210BD2-4F26-4378-9C1C-1547FE86C445}</Project>
+      <Name>UtilLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Years.Common\Years.Common.csproj">
+      <Project>{EB8FC770-C49A-4624-A549-8B003D741BAD}</Project>
+      <Name>Years.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Years.IServices\Years.IServices.csproj">
+      <Project>{A8657D8F-3656-4CED-B3A0-7ABC44211B8F}</Project>
+      <Name>Years.IServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Years.Model\Years.Model.csproj">
+      <Project>{408E7BF0-9B7B-4A62-AC42-2CA5E02C3119}</Project>
+      <Name>Years.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Years.Services\Years.Services.csproj">
+      <Project>{9C26B287-FC89-41E4-889C-81C1288CFF42}</Project>
+      <Name>Years.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Years.ViewModel\Years.ViewModel.csproj">
+      <Project>{9C148918-C9E2-447C-AB08-B8EAB45A09C5}</Project>
+      <Name>Years.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Years.WebCore\Years.WebCore.csproj">
+      <Project>{4649acef-8377-4005-8b88-fe642772d258}</Project>
+      <Name>Years.WebCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3475</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:20080/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/CSS/zui.css" rel="stylesheet" />
+    @*<link href="~/Content/CSS/zui-blog-theme.css" rel="stylesheet" />*@
+    <link href="~/Content/CSS/zui-theme-blue.css" rel="stylesheet" />
+    <link href="~/Content/CSS/HomeIndex.css" rel="stylesheet" />
+    <link href="~/Content/CSS/pagerstyles.css" rel="stylesheet" />
+    <title>@ViewBag.Title - 岁月</title>
+</head>
+
+<body>
+    <!--导航部分-->
+    @Html.Partial("_NavbarPage2")
+    <!--主体内容-->
+    <div class="main">
+        <div class="row">
+            <!--左边主要内容-->
+            @*<article style="margin-top: 10px;">
+                    <div class="col-md-8" id="leftmain">
+                        @RenderBody()
+                    </div>
+                </article>*@
+            <!--左边主要内容-->
+            <!--右边栏-->
+            <!--主题部分-->
+            @{
+                if (ViewBag.controllername != "statistical")
+                {
+                    <article style="margin-top: 10px;">
+                        <div class="col-md-8" id="leftmain">
+                            @RenderBody()
+                        </div>
+                    </article>
+                    @Html.Partial("_RightPage")
+                }
+                else
+                {
+                    @RenderBody()
+                }
+
+            }
+
+            <!--右边栏-->
+        </div>
+    </div>
+    <!--主题部分-->
+    <!--底部版权部分-->
+    @Html.Partial("_FooterPage")
+
+    <script src="~/Content/JS/jquery-1.12.4.min.js"></script>
+    <script src="~/Content/JS/zui.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //用于控制导航样式
+            var name = '@ViewBag.controllername'
+            $('#' + name).attr("class", "active")
+        })
+    </script>
+    @RenderSection("scripts", false)
+</body>
+</html>

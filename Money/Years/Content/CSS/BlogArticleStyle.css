@@ -1,0 +1,39 @@
+﻿/*导航部分*/
+.blogcontent {
+    font-size: 13px;
+    color: #676a6c;
+    background-color: #f3f3f4;
+    box-sizing: border-box;
+}
+.white-bg {
+    background-color: #ffffff;
+    margin-right: -10px;
+}
+.tnav h2 {
+    margin: 15px 0;
+}
+.tnav .breadcrumb {
+    margin: 20px 0 0 10px;
+}
+.breadcrumb {
+    background-color: #ffffff;
+    padding: 0;
+}
+.fl {
+    float: left;
+}
+/*导航部分结束*/
+/*博客主体*/
+.wrapper {
+    background-color: #ffffff;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 4px 0px 0;
+    color: inherit;
+    margin-bottom: 0;
+    padding: 14px 15px 7px;
+    min-height: 48px;
+}
+
+/*博客主体结束*/
