@@ -8,7 +8,7 @@ namespace GameDb.Util
 {
     public class Log
     {
-        static public LogImplement __log = new LogImplement(log4net.LogManager.GetLogger("lumao"));
+        static public LogImplement __log = new LogImplement(log4net.LogManager.GetLogger("huobi"));
         static public void log(object str) {
             __log.debug(str);
         }

@@ -17,7 +17,7 @@ namespace HuobiAPI
         //火币现货配置信息
         public static String HUOBI_ACCESS_KEY = "be079903-9e49f720-0a86de4e-d2a64";
         public static String HUOBI_SECRET_KEY = "e787543b-2455129c-7139246d-3c878";
-        public static String HUOBI_API_URL = "https://api.huobi.br.com/market";
+        public static String HUOBI_API_URL = "https://api.huobi.br.com/";
         protected static int success = 200;
 
         //火币网请求信息

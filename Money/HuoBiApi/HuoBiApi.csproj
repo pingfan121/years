@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -43,9 +44,32 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="huobi_api\HuobiBase.cs" />
+    <Compile Include="huobi_api\HuobiData.cs" />
     <Compile Include="huobi_api\HuobiHome.cs" />
     <Compile Include="huobi_api\HuobiService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtilLib\UtilLib.csproj">
+      <Project>{3f210bd2-4f26-4378-9c1c-1547fe86c445}</Project>
+      <Name>UtilLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Years.Common\Years.Common.csproj">
+      <Project>{eb8fc770-c49a-4624-a549-8b003d741bad}</Project>
+      <Name>Years.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Years.IRepository\Years.IRepository.csproj">
+      <Project>{1b064264-1e5a-40a3-a150-a73e12d9d02a}</Project>
+      <Name>Years.IRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Years.Model\Years.Model.csproj">
+      <Project>{408e7bf0-9b7b-4a62-ac42-2ca5e02c3119}</Project>
+      <Name>Years.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Years.Repository\Years.Repository.csproj">
+      <Project>{e3eca35d-1540-44c2-9222-ba11ed9343f1}</Project>
+      <Name>Years.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

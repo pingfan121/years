@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Collections.Specialized;
+using HuoBiApi.huobi_api;
+using GameLib.Util;
+using GameDb.Util;
 
 namespace HuobiAPI
 {
@@ -249,14 +252,58 @@ namespace HuobiAPI
         }
 
         //获取K线
-        public string getKLine( string symbol,string period="1day",int size=150)
+        public List<hb_kline> getKLine( string symbol,string period="1day",int size=150)
         {
             Dictionary<string, Object> PostVars = new Dictionary<string, Object>();
-              PostVars.Add("symbol", symbol);
+            PostVars.Add("symbol", symbol);
             PostVars.Add("period", period);
             PostVars.Add("size", size+"");
 
-            return HuobiBase.Post("/history/kline", PostVars);
+            string result = HuobiBase.Post("market/history/kline", PostVars);
+
+            return getData<hb_kline>(result);
+        }
+
+        //获取所有交易对
+        public List<hb_symbols> getAllSymbol()
+        {
+            Dictionary<string, Object> PostVars = new Dictionary<string, Object>();
+
+            string result = HuobiBase.Post("v1/common/symbols", PostVars);
+
+            return getData<hb_symbols>(result);
+
+        }
+
+
+        private List<T> getData<T>(string result)
+        {
+
+            List<T> aa = null;
+
+            if (result.Contains("\"status\":\"ok\""))
+            {
+                try
+                {
+                    result = result.Replace('-', '_');
+                    result = result.Replace("E_", "E-");
+
+
+                    hb_data data = JSON.Decode<hb_data>(result);
+
+                    string temp = JSON.Encode(data.data);
+
+                    aa = JSON.Decode<List<T>>(temp);
+                }
+                catch(Exception ex)
+                {
+                    Log.error(result);
+                    Log.error(ex);
+                }
+               
+            }
+
+            return aa;
         }
     }
 }
