@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace Money.Controllers
@@ -25,6 +26,11 @@ namespace Money.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        [HttpPost]
+        public JsonResult GetSymbols()
+        {
+            return new JsonResult();
         }
     }
 }
