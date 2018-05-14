@@ -23,9 +23,18 @@ namespace Money
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
+                "~/JsLib/DataTables/media/js/jquery.dataTables.js"));   //表格js
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/JsLib/DataTables/media/css/jquery.dataTables.min.css"   //datatables 表格样式
+                      ));
+
+            
+
+           
         }
     }
 }

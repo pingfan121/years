@@ -27,10 +27,17 @@ namespace Money.Controllers
 
             return View();
         }
-        [HttpPost]
+        
         public JsonResult GetSymbols()
         {
-            return new JsonResult();
+            //   return new JsonResult();
+
+            return Json(new List<object>()
+            {  new  {id=1 },
+            new {id=2}
+            },JsonRequestBehavior.AllowGet
+
+                );
         }
     }
 }
