@@ -28,17 +28,14 @@ namespace Money.huobi_api
 
         private static void SendBackMsg()
         {
-            //发往后台的数据
-            //有需要重置的数据重置一下
-            //string a =server.getKLine("btcusdt");
-            //Console.WriteLine(b);
-
-
+           
             huobiEntities hbdb = new huobiEntities();
 
             DateTime time1 = new DateTime();
 
             List<hb_symbols> symbols = null;
+
+            int count = 150;
 
             while (true)
             {
@@ -64,7 +61,7 @@ namespace Money.huobi_api
                             {
                                 string symbol = item.base_currency + item.quote_currency;
 
-                                List<hb_kline> data = server.getKLine(symbol,"1day",1);
+                                List<hb_kline> data = server.getKLine(symbol,"1day", count);
 
                                 if (data != null && data.Count > 0)
                                 {
@@ -75,7 +72,7 @@ namespace Money.huobi_api
                                     DateTime time4 = time3.AddDays(1);
 
 
-
+                                    
                                     market m = hbdb.market.FirstOrDefault(a => (a.symbols == symbol && a.last_time >= time3.Date && a.last_time < time4.Date));
                                     
                                     if (m == null)
@@ -103,17 +100,15 @@ namespace Money.huobi_api
 
                                         hbdb.Entry(m).State = EntityState.Modified;
                                     }
-
-                                
-
+                                    
                                     hbdb.SaveChanges();
 
                                     Thread.Sleep(100);
 
                                 }
-
                             }
                         }
+                        count = 1;
                     }
 
                         

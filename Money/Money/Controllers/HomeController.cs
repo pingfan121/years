@@ -1,4 +1,7 @@
-﻿using System;
+﻿using GameDb.Util;
+using GameLib.Util;
+using HuoBiApi.Bll;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -32,10 +35,9 @@ namespace Money.Controllers
         {
             //   return new JsonResult();
 
-            return Json(new List<object>()
-            {  new  {id=1 },
-            new {id=2}
-            },JsonRequestBehavior.AllowGet
+            var a = HomeBll.getSymbolsList(DateTime.Now);
+            
+            return Json(a,JsonRequestBehavior.AllowGet
 
                 );
         }

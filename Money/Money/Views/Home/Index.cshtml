@@ -6,24 +6,62 @@
 
 }
 
-
 <div class="row">
-    <table class="table table-bordered table-hover table-striped" id="dutyListTable">
-        <thead>
-            <tr>
-                <th>选择</th>
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <form class="form-inline">
 
-                <th>选择</th>
-                @*<th>实际值班人</th>
-        <th>值班日期</th>
-        <th>班次类别</th>*@
-            </tr>
-        </thead>
-        <tbody id="rewardBody"></tbody>
-    </table>
+                    <div class="form-group">
+                        <label for="" style="margin-right: 3px;">
+                            有了下面的排行,日上三竿不起床
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="margin-left: 3px;">
+                            日期:
+                        </label>
+                        <input class="form-control" style="width: 150px;" id="startTime" value="@(DateTime.Now.ToString("yyyy-MM-dd"))" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd' })" type="text" placeholder="起始时间" />
+                    </div>
+                    <div class="form-group" style="margin-left: 3px;">
+                        <button id="queryBtn" type="button" class="btn btn-success">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            查询
+                        </button>
 
+                    </div>
+                </form>
+            </div>
+            <!-- /.panel-heading -->
+            <!-- /.panel-body -->
+            <div class="panel-body">
+                <div class="dataTable_wrapper">
+
+                    <table class="table table-bordered table-hover table-striped" id="dutyListTable">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>符号对</th>
+                                <th>代币</th>
+                                <th>货币</th>
+                                <th>开盘价</th>
+                                <th>收盘价</th>
+                                <th>交易量</th>
+                                <th>时间</th>
+                                @*<th>实际值班人</th>
+                    <th>值班日期</th>
+                    <th>班次类别</th>*@
+                            </tr>
+                        </thead>
+                        <tbody id="rewardBody"></tbody>
+                    </table>
+
+                </div>
+         
+    </div>
 </div>
 
+@Scripts.Render("~/bundles/datapicker")
 
 @section scripts {
 
@@ -31,8 +69,60 @@
 
         var table = null;
 
-        function gettabledata()
-        {
+
+
+        $(function () {
+            table = $("#dutyListTable").DataTable({
+                "data": null,
+                "paging": false,
+                "ordering": false,
+                "searching": false,
+                "lengthChange": false,
+                "info": false,
+            'language': {
+                "emptyTable": "没有相关数据"
+            },
+                columns: [
+                    { data: 'id' },
+
+                    {
+                        data: 'symbols'
+                    },
+                    {
+                        data: 'coin_type'
+                    },
+                    {
+                        data: 'token_type'
+                    },
+                    {
+                        data: 'open_price'
+                    },
+                    {
+                        data: 'close_price'
+                    },
+                    {
+                        data: 'turnover'
+                    },
+                    {
+                        data: 'last_time',
+                        "render": function (data, type, full, meta) {
+
+                            return ul_getTimeText(data);
+                        }
+                    }
+                ]
+            });
+
+            gettabledata();
+
+
+        });
+
+
+         function gettabledata()
+         {
+             var searchWord = $("#searchWord").val();
+
                 $.ajax({  //ajax方式向后台发送请求
                 "type": "POST",
                 "url": "@Url.Action( "GetSymbols")",
@@ -48,35 +138,7 @@
                 });
         };
 
-        $(function () {
-            table = $("#dutyListTable").DataTable({
-                "data": null,
-                "paging": false,
-                "ordering": false,
-                "searching": false,
-                "lengthChange": false,
-                "info": false,
-            'language': {
-                "emptyTable": "没有相关数据"
-            },
-            columns: [
-                { data: 'id' },
-          
-                {
-                    data: 'id',
-                    "render": function (data, type, full, meta) {
-                        return "你好";
-                    }
-                }
 
-            ]
-            });
-
-            gettabledata();
-
-           
-        });
-       
 
     </script>
 }

@@ -21,10 +21,16 @@ namespace Money
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/JsLib/UtilLib.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
                 "~/JsLib/DataTables/media/js/jquery.dataTables.js"));   //表格js
+
+
+            //日历
+            bundles.Add(new ScriptBundle("~/bundles/datapicker").Include(
+              "~/JsLib/DatePicker/WdatePicker.js"));   //表格js
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

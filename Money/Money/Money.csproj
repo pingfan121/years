@@ -78,6 +78,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Data.6.9.11\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MySql.Data.Entity.6.9.11\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -868,6 +876,34 @@
     <Content Include="JsLib\DataTables\media\js\jquery.dataTables.js" />
     <Content Include="JsLib\DataTables\media\js\jquery.dataTables.min.js" />
     <Content Include="JsLib\DataTables\media\js\jquery.js" />
+    <Content Include="JsLib\DatePicker\calendar.js" />
+    <Content Include="JsLib\DatePicker\lang\en.js" />
+    <Content Include="JsLib\DatePicker\lang\zh-cn.js" />
+    <Content Include="JsLib\DatePicker\lang\zh-tw.js" />
+    <Content Include="JsLib\DatePicker\skin\datePicker.gif" />
+    <Content Include="JsLib\DatePicker\skin\default\datepicker.css" />
+    <Content Include="JsLib\DatePicker\skin\default\img.gif" />
+    <Content Include="JsLib\DatePicker\skin\twoer\datepicker-dev.css" />
+    <Content Include="JsLib\DatePicker\skin\twoer\datepicker.css" />
+    <Content Include="JsLib\DatePicker\skin\twoer\img.gif" />
+    <Content Include="JsLib\DatePicker\skin\twoer\img.png" />
+    <Content Include="JsLib\DatePicker\skin\WdatePicker.css" />
+    <Content Include="JsLib\DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="JsLib\DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="JsLib\DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="JsLib\DatePicker\WdatePicker.js" />
+    <Content Include="JsLib\DatePicker\开发包\lang\en.js" />
+    <Content Include="JsLib\DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="JsLib\DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="JsLib\DatePicker\开发包\readme.txt" />
+    <Content Include="JsLib\DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="JsLib\DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="JsLib\DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="JsLib\DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="JsLib\DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="JsLib\DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="JsLib\DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="JsLib\UtilLib.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -956,6 +992,14 @@
     <ProjectReference Include="..\HuoBiApi\HuoBiApi.csproj">
       <Project>{3f17e1e0-191f-496f-8098-573d86b49bb8}</Project>
       <Name>HuoBiApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilLib\UtilLib.csproj">
+      <Project>{3F210BD2-4F26-4378-9C1C-1547FE86C445}</Project>
+      <Name>UtilLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Years.Model\Years.Model.csproj">
+      <Project>{408E7BF0-9B7B-4A62-AC42-2CA5E02C3119}</Project>
+      <Name>Years.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

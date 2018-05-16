@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bll\HomeBll.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="huobi_api\HuobiBase.cs" />
     <Compile Include="huobi_api\HuobiData.cs" />
@@ -71,6 +72,7 @@
       <Name>Years.Repository</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
