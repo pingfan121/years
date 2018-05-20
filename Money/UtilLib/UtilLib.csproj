@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CommonData.cs" />
+    <Compile Include="CommonDataGet.cs" />
     <Compile Include="log\Log.cs" />
     <Compile Include="log\LogImplement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

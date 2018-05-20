@@ -1,4 +1,5 @@
 ﻿using Microsoft.Owin;
+using Money.huobi_api;
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(Money.Startup))]
@@ -9,6 +10,9 @@ namespace Money
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+
+
+            HuobiHome.init();
 
         }
     }

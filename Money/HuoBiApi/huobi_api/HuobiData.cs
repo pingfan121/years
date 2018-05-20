@@ -34,4 +34,19 @@ namespace HuoBiApi.huobi_api
         public double high;
         public double vol;
     }
+
+    //火币的k线数据
+    public class hb_market
+    {
+        public int id { get; set; }
+        public string symbols { get; set; }
+        public string coin_type { get; set; }
+        public string token_type { get; set; }
+        public double open_price { get; set; }
+        public double close_price { get; set; }
+        public double rose { get; set; }
+        public int turnover { get; set; }
+        public System.DateTime last_time { get; set; }
+        public double rate{ get; set; }
+}
 }

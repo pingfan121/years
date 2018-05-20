@@ -31,15 +31,19 @@ namespace Money.Controllers
             return View();
         }
         
-        public JsonResult GetSymbols()
+        public JsonResult GetSymbols(string type,string time)
         {
             //   return new JsonResult();
 
-            var a = HomeBll.getSymbolsList(DateTime.Now);
+            var a = HomeBll.getSymbolsList(type,time);
             
-            return Json(a,JsonRequestBehavior.AllowGet
-
-                );
+            return Json(a,JsonRequestBehavior.AllowGet);
         }
+
+
+        //public JsonResult GetGoodSymbols(string type)
+        //{
+
+        //}
     }
 }

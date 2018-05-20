@@ -29,7 +29,7 @@ namespace Money
 
 
             //日历
-            bundles.Add(new ScriptBundle("~/bundles/datapicker").Include(
+            bundles.Add(new ScriptBundle("~/bundles/datepicker").Include(
               "~/JsLib/DatePicker/WdatePicker.js"));   //表格js
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

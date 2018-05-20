@@ -1,0 +1,109 @@
+[2018/05/18 13:44:13.077] [ERROR] [huobi] - System.Threading.ThreadAbortException: 正在中止线程。
+   在 MySql.Data.Common.MyNetworkStream.HandleOrRethrowException(Exception e)
+   在 MySql.Data.Common.MyNetworkStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   在 MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   在 System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   在 MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   在 MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.Entity.EFMySqlCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<NonQuery>b__0(DbCommand t, DbCommandInterceptionContext`1 c)
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.NonQuery(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Internal.InterceptableDbCommand.ExecuteNonQuery()
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   在 System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   在 System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   在 System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+   在 System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   在 System.Data.Entity.DbContext.SaveChanges()
+   在 Money.huobi_api.HuobiHome.SendBackMsg() 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiHome.cs:行号 113
+[2018/05/18 13:49:43.698] [ERROR] [huobi] - 测试日志
+[2018/05/18 13:51:17.785] [ERROR] [huobi] - 测试日志
+[2018/05/18 14:21:08.452] [ERROR] [huobi] - 测试日志
+[2018/05/18 14:26:11.267] [ERROR] [huobi] - System.Net.WebException: 操作已超时。
+   在 System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   在 System.Net.WebClient.DownloadData(Uri address)
+   在 System.Net.WebClient.DownloadData(String address)
+   在 HuobiAPI.HuobiBase.Post(String route, Dictionary`2 PostVars) 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiBase.cs:行号 91
+   在 HuobiAPI.HuobiService.getAllSymbol() 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiService.cs:行号 272
+   在 Money.huobi_api.HuobiHome.SendBackMsg() 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiHome.cs:行号 52
+[2018/05/18 14:52:15.334] [ERROR] [huobi] - 测试日志
+[2018/05/18 15:23:54.343] [ERROR] [huobi] - 测试日志
+[2018/05/18 15:28:25.887] [ERROR] [huobi] - 测试日志
+[2018/05/18 15:33:09.331] [ERROR] [huobi] - 测试日志
+[2018/05/18 15:54:17.588] [ERROR] [huobi] - 测试日志
+[2018/05/18 16:35:56.940] [ERROR] [huobi] - 测试日志
+[2018/05/18 16:37:16.080] [ERROR] [huobi] - 测试日志
+[2018/05/18 17:19:02.729] [ERROR] [huobi] - System.Net.WebException: 操作超时
+   在 System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   在 System.Net.WebClient.DownloadData(Uri address)
+   在 System.Net.WebClient.DownloadData(String address)
+   在 HuobiAPI.HuobiBase.Post(String route, Dictionary`2 PostVars) 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiBase.cs:行号 91
+   在 HuobiAPI.HuobiService.getKLine(String symbol, String period, Int32 size) 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiService.cs:行号 262
+   在 Money.huobi_api.HuobiHome.SendBackMsg() 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiHome.cs:行号 69
+[2018/05/18 17:43:36.589] [ERROR] [huobi] - System.Net.WebException: 操作超时
+   在 System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   在 System.Net.WebClient.DownloadData(Uri address)
+   在 System.Net.WebClient.DownloadData(String address)
+   在 HuobiAPI.HuobiBase.Post(String route, Dictionary`2 PostVars) 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiBase.cs:行号 91
+   在 HuobiAPI.HuobiService.getKLine(String symbol, String period, Int32 size) 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiService.cs:行号 262
+   在 Money.huobi_api.HuobiHome.SendBackMsg() 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiHome.cs:行号 69
+[2018/05/18 18:07:02.380] [ERROR] [huobi] - System.Net.WebException: 操作超时
+   在 System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   在 System.Net.WebClient.DownloadData(Uri address)
+   在 System.Net.WebClient.DownloadData(String address)
+   在 HuobiAPI.HuobiBase.Post(String route, Dictionary`2 PostVars) 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiBase.cs:行号 91
+   在 HuobiAPI.HuobiService.getKLine(String symbol, String period, Int32 size) 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiService.cs:行号 262
+   在 Money.huobi_api.HuobiHome.SendBackMsg() 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiHome.cs:行号 69
+[2018/05/20 07:28:36.810] [ERROR] [huobi] - 测试日志
+[2018/05/20 09:13:10.761] [ERROR] [huobi] - 测试日志
+[2018/05/20 09:54:12.110] [ERROR] [huobi] - System.Data.Entity.Core.EntityException: The underlying provider failed on Open. ---> System.TimeoutException: Timeout in IO operation
+   在 MySql.Data.MySqlClient.TimedStream.StopTimer()
+   在 MySql.Data.MySqlClient.TimedStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   在 System.IO.BufferedStream.Read(Byte[] array, Int32 offset, Int32 count)
+   在 MySql.Data.MySqlClient.MySqlStream.ReadFully(Stream stream, Byte[] buffer, Int32 offset, Int32 count)
+   在 MySql.Data.MySqlClient.MySqlStream.LoadPacket()
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadOk(Boolean read)
+   在 MySql.Data.MySqlClient.NativeDriver.SetDatabase(String dbName)
+   在 MySql.Data.MySqlClient.Driver.SetDatabase(String dbName)
+   在 MySql.Data.MySqlClient.MySqlConnection.ChangeDatabase(String databaseName)
+   在 MySql.Data.MySqlClient.MySqlConnection.Open()
+   在 System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.<Open>b__36(DbConnection t, DbConnectionInterceptionContext c)
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(DbConnection connection, DbInterceptionContext interceptionContext)
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.<Open>b__2()
+   在 System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute(Action operation)
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection(Boolean shouldMonitorTransactions)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.Infrastructure.DefaultExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   在 System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   在 System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   在 System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   在 System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   在 System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 Money.huobi_api.HuobiHome.SendBackMsg() 位置 F:\project\Money\HuoBiApi\huobi_api\HuobiHome.cs:行号 86

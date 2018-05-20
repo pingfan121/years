@@ -75,6 +75,10 @@
       <Project>{3f17e1e0-191f-496f-8098-573d86b49bb8}</Project>
       <Name>HuoBiApi</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UtilLib\UtilLib.csproj">
+      <Project>{3F210BD2-4F26-4378-9C1C-1547FE86C445}</Project>
+      <Name>UtilLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
