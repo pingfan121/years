@@ -5,3 +5,6 @@ publish
 **/bin
 **/.suo
 
+/Years/.vs
+/Money/.vs
+/Money/Money/log
