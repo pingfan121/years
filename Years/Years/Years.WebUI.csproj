@@ -608,11 +608,13 @@
     <Content Include="Content\lib\webuploader\dist\webuploader.withoutimage.js" />
     <Content Include="Content\lib\webuploader\dist\webuploader.withoutimage.min.js" />
     <Content Include="Content\lib\zui\doc.css" />
+    <Content Include="css\page_head.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="res\头像.png" />
+    <Content Include="res\菜单.png" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -715,6 +717,7 @@
     <Content Include="Views\Home2\Index.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Shared\_NavbarPage2.cshtml" />
+    <Content Include="Views\Shared\LeftNav.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

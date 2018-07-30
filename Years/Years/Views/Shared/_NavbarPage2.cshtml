@@ -1,30 +1,28 @@
 ﻿<!--导航-->
-<nav class="navbar navbar-default navbar-fixed-top" style="height:50px;">
-    <div class="container">
-        <!--小屏幕导航按钮和logo-->
-        <div class="navbar-header">
-            @*<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>*@
-            <a href="index.html" class="navbar-brand">岁月</a>
-            <div style="width:40px; height:40px; border-radius:100%; overflow:hidden; margin-top:5px;margin-bottom:5px;">
-               
-                <img src="~/res/头像.png" />
-            </div>
+<link href="~/css/page_head.css" rel="stylesheet" />
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div style="width:100%">
+
+        <div style="float:left;margin-left: 10px;display:inline ;background-color:red;">
+            @*<a href="">
+                <img src="~/res/菜单.png" style="vertical-align: middle;" />
+            </a>*@
+
+            <a href="~/Views/Shared/LeftNav.cshtml"> <img src="~/res/菜单.png" style="vertical-align: middle;" /></a>
         </div>
-        <!--小屏幕导航按钮和logo-->
-        <!--导航-->
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li ><a href="/home2/index"><i class="icon icon-home"></i>&nbsp;磨推鬼</a></li>
-                <li ><a href="/home2/index"><i class="icon icon-list-alt"></i>&nbsp;匣中剑</a></li>
-            </ul>
+
+        <div class="logo">
+           
+            <div style="display:inline;width:50px;text-align:center" >
+                哈哈
+            </div>   
            
         </div>
-        <!--导航-->
 
+        <div style="float:right;display:inline;margin-right: 10px;background-color:blueviolet;">
+            <img src="~/res/头像.png" style="vertical-align: middle;" />
+        </div>
     </div>
 </nav>
 <!--导航-->
