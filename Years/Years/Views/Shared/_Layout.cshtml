@@ -4,17 +4,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
     <link href="~/Content/CSS/zui.css" rel="stylesheet" />
     @*<link href="~/Content/CSS/zui-blog-theme.css" rel="stylesheet" />*@
     <link href="~/Content/CSS/zui-theme-blue.css" rel="stylesheet" />
     <link href="~/Content/CSS/HomeIndex.css" rel="stylesheet" />
     <link href="~/Content/CSS/pagerstyles.css" rel="stylesheet" />
-    <title>@ViewBag.Title - WMBlog博客</title>
-
-
+    <link href="~/Content/CSS/page_head.css?v=@DateTime.Now.ToString()" rel="stylesheet" />
+    <title>@ViewBag.Title - 岁月</title>
 </head>
+
 <body>
     <!--导航部分-->
+    @Html.Partial("LeftNav")
     @Html.Partial("_NavbarPage")
     <!--主体内容-->
     <div class="main">
@@ -56,7 +61,6 @@
     <script src="~/Content/JS/zui.js"></script>
     <script src="~/Scripts/jquery.validate.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
-    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
     <script type="text/javascript">
         $(function () {
             //用于控制导航样式
@@ -65,5 +69,17 @@
         })
     </script>
     @RenderSection("scripts", false)
+
+    <script>
+
+        //左侧导航菜单出现
+        $('#menubtn').click(function () {
+            $('.menu').fadeIn('100');
+            //setTimeout(function () {
+            //    $('.memu .list').css('margin-left', 0)
+            //}, 100)
+            //$('body').css('overflow', 'hidden')
+        });
+    </script>
 </body>
 </html>

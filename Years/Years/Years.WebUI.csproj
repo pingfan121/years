@@ -608,7 +608,7 @@
     <Content Include="Content\lib\webuploader\dist\webuploader.withoutimage.js" />
     <Content Include="Content\lib\webuploader\dist\webuploader.withoutimage.min.js" />
     <Content Include="Content\lib\zui\doc.css" />
-    <Content Include="css\page_head.css" />
+    <Content Include="Content\CSS\page_head.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -715,8 +715,6 @@
     <Content Include="Views\Home2\About.cshtml" />
     <Content Include="Views\Home2\Contact.cshtml" />
     <Content Include="Views\Home2\Index.cshtml" />
-    <Content Include="Views\Shared\_Layout2.cshtml" />
-    <Content Include="Views\Shared\_NavbarPage2.cshtml" />
     <Content Include="Views\Shared\LeftNav.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -726,6 +724,7 @@
     <Folder Include="Areas\admin\Views\Advertisement\" />
     <Folder Include="Areas\admin\Views\Login\" />
     <Folder Include="Areas\admin\Views\Vcode\" />
+    <Folder Include="css\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
