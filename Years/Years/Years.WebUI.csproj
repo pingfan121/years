@@ -615,6 +615,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="res\头像.png" />
     <Content Include="res\菜单.png" />
+    <Content Include="res\返回.png" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />

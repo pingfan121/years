@@ -27,6 +27,12 @@ namespace Years.WebUI
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/basejs").Include(
+                   "~/Scripts/bootstrap.js",
+                   "~/Scripts/respond.js",
+                   "~/Scripts/jquery-{version}.js",
+                   "~/Scripts/jquery.validate*"));
         }
     }
 }

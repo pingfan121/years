@@ -57,10 +57,8 @@
     <!--底部版权部分-->
     @Html.Partial("_FooterPage")
 
-    <script src="~/Content/JS/jquery-1.12.4.min.js"></script>
-    <script src="~/Content/JS/zui.js"></script>
-    <script src="~/Scripts/jquery.validate.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    @Scripts.Render("~/bundles/basejs")
+
     <script type="text/javascript">
         $(function () {
             //用于控制导航样式
@@ -75,11 +73,23 @@
         //左侧导航菜单出现
         $('#menubtn').click(function () {
             $('.menu').fadeIn('100');
-            //setTimeout(function () {
-            //    $('.memu .list').css('margin-left', 0)
-            //}, 100)
-            //$('body').css('overflow', 'hidden')
+           setTimeout(function () {
+               $('.menupage').css('margin-left', 0)
+    }, 100)
         });
+
+        $('.menu').click(function () {
+
+            //if ($(this).attr('href') != null) {
+            //    setTimeout("top.location.href = '" + $(this).attr('href') + "'", 400);
+            //}
+            $('.menupage').css('margin-left', '-250px')
+            setTimeout(function () {
+                $('.menu').fadeOut('100')
+            }, 100)
+            return false
+        });
+
     </script>
 </body>
 </html>
