@@ -66,16 +66,16 @@
             $('#' + name).attr("class", "active")
         })
     </script>
-    @RenderSection("scripts", false)
+
 
     <script>
 
         //左侧导航菜单出现
         $('#menubtn').click(function () {
             $('.menu').fadeIn('100');
-           setTimeout(function () {
-               $('.menupage').css('margin-left', 0)
-    }, 100)
+            setTimeout(function () {
+                $('.menupage').css('margin-left', 0)
+            }, 100)
         });
 
         $('.menu').click(function () {
@@ -91,5 +91,7 @@
         });
 
     </script>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -32,7 +32,7 @@ namespace Years.WebUI.Areas.admin.Controllers
         {
             adminUserInfoService.Add(model);
             adminUserInfoService.SaverChanges();
-            return WriteSuccess("添加成功");
+            return Success(null,"添加成功");
         }
         public ActionResult GetData()
         {

@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Wchl.WMBlog.Common;
 using Wchl.WMBlog.WebCore.Attrs;
 using Years.Common;
 

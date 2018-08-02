@@ -4,42 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wchl.WMBlog.Common
+namespace Years.Common.Enum
 {
-    
-    public class Enums
+
+    /// <summary>
+    /// 负责标记ajax请求以后的json数据状态
+    /// </summary>
+    public class EnumAjaxState
     {
         /// <summary>
-        /// 负责标记ajax请求以后的json数据状态
+        /// 成功
         /// </summary>
-        public enum EAjaxState
-        {
-            /// <summary>
-            /// 成功
-            /// </summary>
-            success = 0,
-            /// <summary>
-            ///  错误异常
-            /// </summary>
-            error = 1,
-            /// <summary>
-            /// 未登录
-            /// </summary>
-            nologin = 2
-
-        }
+        public static string success="success";
         /// <summary>
-        ///  菜单使用状态
+        ///  错误异常
         /// </summary>
-        public enum EState {
-            /// <summary>
-            /// 正常
-            /// </summary>
-            Nomal = 0,
-            /// <summary>
-            /// 停用(删除)
-            /// </summary>
-            Stop = 1
-        }
+        public static string error = "error";
+        /// <summary>
+        /// 未登录
+        /// </summary>
+        public static string nologin = "nologin";
+
     }
+    
 }

@@ -48,12 +48,12 @@ namespace Years.WebUI.Areas.admin.Controllers
             }
             if (model.vcode=="" || vcodeFromSession.Equals(model.vcode, StringComparison.OrdinalIgnoreCase) == false)
             {
-                return WriteError("验证码不合法");
+                return Error("验证码不合法");
             }
             var userinfo = AdminUserInfoServices.QueryWhere(c => c.name == model.login_name && c.pass == model.login_pass).FirstOrDefault();
             if (userinfo == null)
             {
-                return WriteError("用户名或者密码错误");
+                return Error("用户名或者密码错误");
             }
             // Session[Keys.uinfo] = userinfo;
             //改用redis缓存
@@ -74,7 +74,7 @@ namespace Years.WebUI.Areas.admin.Controllers
                 Response.Cookies.Add(cookie);
             }
 
-            return WriteSuccess("登录成功");
+            return Success(null,"登录成功");
 
         }
         [HttpGet]
