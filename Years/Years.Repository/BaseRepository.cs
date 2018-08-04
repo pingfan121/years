@@ -15,7 +15,7 @@ namespace Years.Repository
 
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
-        public yearsEntities db = new yearsEntities();
+        public YearsEntities db = new YearsEntities();
 
         public DbSet<TEntity> _dbSet;
 

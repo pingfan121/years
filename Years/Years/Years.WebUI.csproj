@@ -185,13 +185,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\admin\adminAreaRegistration.cs" />
-    <Compile Include="Areas\admin\Controllers\AdminUserInfoController.cs" />
-    <Compile Include="Areas\admin\Controllers\AdvertisementController.cs" />
-    <Compile Include="Areas\admin\Controllers\BlogArticleController.cs" />
-    <Compile Include="Areas\admin\Controllers\HomeController.cs" />
-    <Compile Include="Areas\admin\Controllers\LoginController.cs" />
-    <Compile Include="Areas\admin\Controllers\VcodeController.cs" />
     <Compile Include="Controllers\Home2Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -627,10 +620,6 @@
     <Content Include="config\log4net.conf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Areas\admin\Views\web.config" />
-    <Content Include="Areas\admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\admin\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\admin\Views\Shared\_sidebar.cshtml" />
     <Content Include="Content\lib\DataTables\images\Sorting icons.psd" />
     <Content Include="Content\lib\plupload\examples\dump.php" />
     <Content Include="Content\lib\plupload\examples\jquery\s3.php" />
@@ -682,9 +671,6 @@
     <Content Include="Content\lib\wangEditor\test\icomoon\selection.json" />
     <Content Include="Content\lib\wangEditor\uploadfiles\readme" />
     <Content Include="Content\lib\webuploader\dist\README.md" />
-    <Content Include="Areas\admin\Views\Home\Index.cshtml" />
-    <Content Include="Areas\admin\Views\BlogArticle\Add.cshtml" />
-    <Content Include="Areas\admin\Views\BlogArticle\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -732,11 +718,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\admin\Models\" />
-    <Folder Include="Areas\admin\Views\AdminUserInfo\" />
-    <Folder Include="Areas\admin\Views\Advertisement\" />
-    <Folder Include="Areas\admin\Views\Login\" />
-    <Folder Include="Areas\admin\Views\Vcode\" />
     <Folder Include="css\" />
     <Folder Include="Models\" />
   </ItemGroup>

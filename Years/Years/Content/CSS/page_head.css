@@ -110,7 +110,7 @@
 }
 
 .registerdiv {
-    width: calc( 90%);
+    width: calc(90%);
     margin: 0 auto;
     margin-top: 10px;
     overflow: hidden;
@@ -142,3 +142,16 @@
         box-shadow: 1px 1px 3px #ddd;
         background: #fff;
     }
+
+.logintitle {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    /*position: absolute;
+    left: 50%;
+    margin-left: -100px;*/
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    color: black;
+}

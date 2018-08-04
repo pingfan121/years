@@ -8,7 +8,7 @@ using Years.Model;
 
 namespace Years.Services
 {
-    public class UserInfoServices : BaseServices<UserInfo>, IUserInfoServices
+    public class UserInfoServices : BaseServices<user_info>, IUserInfoServices
     {
 
     }

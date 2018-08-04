@@ -49,17 +49,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAdminUserInfoServices.cs" />
-    <Compile Include="IAdvertisementServices.cs" />
     <Compile Include="IBaseServices.cs" />
-    <Compile Include="IBlogArticleServices.cs" />
-    <Compile Include="IGuestBookService.cs" />
     <Compile Include="IUserInfoServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Years.Model\Years.Model.csproj">
-      <Project>{408E7BF0-9B7B-4A62-AC42-2CA5E02C3119}</Project>
+      <Project>{7a3e0c83-a1a6-4dd5-a87e-f6dcc75466b6}</Project>
       <Name>Years.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Years.ViewModel\Years.ViewModel.csproj">

@@ -57,11 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminUserInfoRepository.cs" />
     <Compile Include="BaseRepository.cs" />
-    <Compile Include="BlogArticleRepository.cs" />
-    <Compile Include="AdvertisementRepository.cs" />
-    <Compile Include="GuestBookRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInfoRepository.cs" />
   </ItemGroup>
@@ -71,7 +67,7 @@
       <Name>Years.IRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Years.Model\Years.Model.csproj">
-      <Project>{408E7BF0-9B7B-4A62-AC42-2CA5E02C3119}</Project>
+      <Project>{7a3e0c83-a1a6-4dd5-a87e-f6dcc75466b6}</Project>
       <Name>Years.Model</Name>
     </ProjectReference>
   </ItemGroup>

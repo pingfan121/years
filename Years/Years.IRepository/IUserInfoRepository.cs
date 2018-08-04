@@ -7,7 +7,7 @@ using Years.Model;
 
 namespace Years.IRepository
 {
-    public interface IUserInfoRepository : IBaseRepository<UserInfo>
+    public interface IUserInfoRepository : IBaseRepository<user_info>
     {
 
     }

@@ -9,7 +9,7 @@ using Years.Repository;
 
 namespace Years.Repository
 {
-    class UserInfoRepository : BaseRepository<UserInfo>,IUserInfoRepository
+    class UserInfoRepository : BaseRepository<user_info>,IUserInfoRepository
     {
 
     }
