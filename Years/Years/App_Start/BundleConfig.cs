@@ -32,7 +32,8 @@ namespace Years.WebUI
                    "~/Scripts/bootstrap.js",
                    "~/Scripts/respond.js",
                    "~/Scripts/jquery-{version}.js",
-                   "~/Scripts/jquery.validate*"));
+                   "~/Scripts/jquery.validate*",
+                    "~/Scripts/flexible-2.0/index.min.js"));
         }
     }
 }

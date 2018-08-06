@@ -24,6 +24,7 @@ namespace Years.Repository
             _dbSet = db.Set<TEntity>();
         }
 
+        
 
 
         #region 查询
@@ -34,7 +35,25 @@ namespace Years.Repository
         /// <returns></returns>
         public List<TEntity> QueryWhere(Expression<Func<TEntity, bool>> predicate)
         {
-            return _dbSet.Where(predicate).ToList();
+            var temp = _dbSet.Where(predicate);
+            if (temp == null)
+            {
+                return null;
+            }
+
+            return temp.ToList();
+        }
+
+        /// <summary>
+        /// 单表查询 返回第一个元素
+        /// </summary>
+        /// <param name="predicate"></param>
+        /// <returns></returns>
+        public TEntity First(Expression<Func<TEntity, bool>> predicate)
+        {
+            var temp = _dbSet.First(predicate);
+
+            return _dbSet.First(predicate);
         }
 
         /// <summary>

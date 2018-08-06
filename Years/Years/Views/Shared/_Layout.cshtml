@@ -22,50 +22,14 @@
     @Html.Partial("LeftNav")
     @Html.Partial("_NavbarPage")
     <!--主体内容-->
-    <div class="main">
-        <div class="row">
-            <!--左边主要内容-->
-            @*<article style="margin-top: 10px;">
-                    <div class="col-md-8" id="leftmain">
-                        @RenderBody()
-                    </div>
-                </article>*@
-            <!--左边主要内容-->
-            <!--右边栏-->
-            <!--主题部分-->
-            @{
-                if (ViewBag.controllername != "statistical")
-                {
-                    <article style="margin-top: 10px;">
-                        <div class="col-md-8" id="leftmain">
-                            @RenderBody()
-                        </div>
-                    </article>
-                    @Html.Partial("_RightPage")
-                }
-                else
-                {
-                    @RenderBody()
-                }
-
-            }
-
-            <!--右边栏-->
-        </div>
+    <div style="margin-top:50px">
+            @RenderBody()
     </div>
     <!--主题部分-->
     <!--底部版权部分-->
     @Html.Partial("_FooterPage")
 
     @Scripts.Render("~/bundles/basejs")
-
-    <script type="text/javascript">
-        $(function () {
-            //用于控制导航样式
-            var name = '@ViewBag.controllername'
-            $('#' + name).attr("class", "active")
-        })
-    </script>
 
 
     <script>

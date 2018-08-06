@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <div style="margin-top: 30px">
+    <div class="div1" style="margin-top: 30px">
 
         <div class="formcell">
             <input type="text" id="country" value="+86" readonly>
@@ -55,7 +55,7 @@
             <div class="tips">*两次输入密码必须一致</div>
         </div>
         <div class="registerdiv">
-            <button id="register" class="registerbtn">立即注册</button>
+            <div id="register" class="registerbtn" >立即注册</div>
         </div>
         <div class="formcell">
             我有账号<a href="/user/login">立即登录</a>
@@ -75,12 +75,12 @@
             else return true;
         }
 
-        $('#register').click(function () {
+        $('#register').click(function onRegister() {
             var name = $('#user').val().trim();
             //  var phonecode = $('#phonecode').val().trim();
             var pwd1 = $('#pwd').val().trim();
             var pwd2 = $('#pwd2').val().trim();
-         //   var country = $('#country').val();
+            //   var country = $('#country').val();
             //if (name == '' || pwd1 == '' || pwd2 == '' || country == '') {
             //    layer.msg('请填写完整注册信息后再提交');
             //    return false
@@ -90,7 +90,7 @@
                 layer.msg('请填写手机号');
                 return false
             }
-            if (checkPhone(name)==false) {
+            if (checkPhone(name) == false) {
                 layer.msg('请填写正确的手机号格式');
                 return false
             }
@@ -113,11 +113,8 @@
             var ii = layer.load(2);
             var parms = new Object();
 
-            parms["phone"] = $('#country').val().trim() + "_" + $('#user').val().trim();
-       //     parms["code"] = $('#phonecode').val().trim()
+            parms["phone"] = $('#user').val().trim();
             parms["pwd"] = $('#pwd').val().trim()
-       //     parms["confirmPwd"] = $('#pwd2').val().trim()
-            //parms["invitationCode"] = $('#inviteCode').val().trim()
 
 
 
@@ -149,7 +146,7 @@
 
             }
             else {
-                layer.msg(data.content);
+                layer.msg(data.msg);
             }
 
         }

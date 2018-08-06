@@ -1079,3 +1079,93 @@ System.Web.HttpCompileException (0x80004005): C:\Users\Administrator\AppData\Loc
    在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
    在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
    在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[2018/08/06 11:08:06.395] [ERROR] [lumao] - 启动
+[2018/08/06 11:08:10.122] [ERROR] [lumao] - Error
+System.Web.HttpCompileException (0x80004005): C:\Users\Administrator\AppData\Local\Temp\Temporary ASP.NET Files\vs\265fcf96\eafd91f7\App_Web_index.cshtml.a8d08dba.h6zh0iaj.0.cs(37): error CS0234: The type or namespace name 'BlogArticle' does not exist in the namespace 'Years.Model' (are you missing an assembly reference?)
+   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[2018/08/06 11:09:35.706] [ERROR] [lumao] - 启动
+[2018/08/06 11:09:36.632] [ERROR] [lumao] - Error
+System.Web.HttpCompileException (0x80004005): C:\Users\Administrator\AppData\Local\Temp\Temporary ASP.NET Files\vs\265fcf96\eafd91f7\App_Web_index.cshtml.a8d08dba.vf5gpjcn.0.cs(37): error CS0234: The type or namespace name 'BlogArticle' does not exist in the namespace 'Years.Model' (are you missing an assembly reference?)
+   在 System.Web.Compilation.AssemblyBuilder.Compile()
+   在 System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   在 System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[2018/08/06 11:14:10.326] [ERROR] [lumao] - Error
+System.Web.HttpException (0x80004005): The "RenderBody" method has not been called for layout page "~/Views/Shared/_Layout.cshtml".
+   在 System.Web.WebPages.WebPageBase.VerifyRenderedBodyOrSections()
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   在 System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   在 System.Web.WebPages.WebPageBase.PopContext()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+[2018/08/06 11:31:40.184] [ERROR] [lumao] - 启动
+[2018/08/06 15:35:20.326] [ERROR] [lumao] - 启动
+[2018/08/06 15:36:18.215] [ERROR] [lumao] - 启动
+[2018/08/06 15:36:30.297] [ERROR] [lumao] - 启动
+[2018/08/06 15:36:44.193] [ERROR] [lumao] - 启动
+[2018/08/06 15:37:22.668] [ERROR] [lumao] - 启动
+[2018/08/06 15:38:04.328] [ERROR] [lumao] - 启动
+[2018/08/06 15:40:05.738] [ERROR] [lumao] - 无法加载指定的元数据资源。
+[2018/08/06 15:40:41.794] [ERROR] [lumao] - 启动
+[2018/08/06 15:41:17.377] [ERROR] [lumao] - 启动
+[2018/08/06 15:42:52.159] [ERROR] [lumao] - 启动
+[2018/08/06 15:50:13.637] [ERROR] [lumao] - 启动
+[2018/08/06 15:53:38.003] [ERROR] [lumao] - 无法加载指定的元数据资源。
+[2018/08/06 15:55:22.263] [ERROR] [lumao] - 启动
+[2018/08/06 15:59:36.038] [ERROR] [lumao] - 启动
+[2018/08/06 16:02:22.844] [ERROR] [lumao] - 序列不包含任何元素
+[2018/08/06 16:03:32.547] [ERROR] [lumao] - 启动
+[2018/08/06 16:06:01.250] [ERROR] [lumao] - 启动
+[2018/08/06 16:21:17.795] [ERROR] [lumao] - 启动
+[2018/08/06 16:24:52.596] [ERROR] [lumao] - 启动
+[2018/08/06 16:30:28.869] [ERROR] [lumao] - 启动
+[2018/08/06 17:47:54.951] [ERROR] [lumao] - 启动
+[2018/08/06 19:22:16.424] [ERROR] [lumao] - 启动
+[2018/08/06 20:21:26.979] [ERROR] [lumao] - 启动
+[2018/08/06 20:39:28.477] [ERROR] [lumao] - 启动
+[2018/08/06 20:43:24.849] [ERROR] [lumao] - 启动
+[2018/08/06 20:51:05.659] [ERROR] [lumao] - 启动
+[2018/08/06 21:30:49.989] [ERROR] [lumao] - 启动
+[2018/08/06 21:55:19.675] [ERROR] [lumao] - 启动
+[2018/08/06 21:55:53.948] [ERROR] [lumao] - 启动

@@ -7,7 +7,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />*@
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-control" content="no-cache">
@@ -28,7 +28,7 @@
         </div>
     </div>
 
-    <div style="margin-top: 30px">
+    <div class="div1" style="margin-top: 30px">
 
         <div class="logintitle">
             止于唇齿
@@ -45,11 +45,10 @@
 
         <div class="formcell">
             <input type="password" placeholder="输入密码" id="pwd">
-            <div class="tips">*密码长度必须大于等于6位</div>
         </div>
 
         <div class="registerdiv">
-            <button id="register" class="registerbtn">登录</button>
+            <div id="login" class="registerbtn">登录</div>
         </div>
         <div class="formcell">
             忘记密码?<a href="/user/login">立即找回</a>
@@ -69,17 +68,10 @@
             else return true;
         }
 
-        $('#register').click(function () {
+        $('#login').click(function () {
             var name = $('#user').val().trim();
-            //  var phonecode = $('#phonecode').val().trim();
-            var pwd1 = $('#pwd').val().trim();
-            var pwd2 = $('#pwd2').val().trim();
-         //   var country = $('#country').val();
-            //if (name == '' || pwd1 == '' || pwd2 == '' || country == '') {
-            //    layer.msg('请填写完整注册信息后再提交');
-            //    return false
-            //}
-
+            var pwd = $('#pwd').val().trim();
+       
             if ('' == name) {
                 layer.msg('请填写手机号');
                 return false
@@ -89,34 +81,24 @@
                 return false
             }
 
-            if ('' == pwd1) {
+            if ('' == pwd) {
                 layer.msg('请填写密码');
                 return false
             }
 
-            if (pwd1.length < 6) {
+            if (pwd.length < 6) {
                 layer.msg('密码长度必须大于6');
                 return false
             }
-
-            if (pwd1 !== pwd2) {
-                layer.msg('两次密码输入必须一致');
-                return false
-            }
-
+            
             var ii = layer.load(2);
             var parms = new Object();
 
-            parms["phone"] = $('#country').val().trim() + "_" + $('#user').val().trim();
-       //     parms["code"] = $('#phonecode').val().trim()
+            parms["phone"] =$('#user').val().trim();
             parms["pwd"] = $('#pwd').val().trim()
-       //     parms["confirmPwd"] = $('#pwd2').val().trim()
-            //parms["invitationCode"] = $('#inviteCode').val().trim()
-
-
-
+            
             $.ajax({
-                url: "@Url.Action("Register", "User")",
+                url: "@Url.Action("Login", "User")",
                 type: 'post',
                 data: parms,
                 async: true,
@@ -124,7 +106,7 @@
                     withCredentials: true
                 },
                 success: function (data) {
-                    registerResponse(data);
+                    LoginResponse(data);
                     layer.close(ii)
                 },
                 error: function () {
@@ -135,15 +117,21 @@
         })
 
         //处理注册的反馈信息
-        function registerResponse(data) {
+        function LoginResponse(data) {
             //var result = eval("(" + data + ")");
             if (data.status == "success") {
                 layer.msg(data.msg);
-                setTimeout(function () { window.location.href = "@Url.Action("Login", "User")"; }, 3000);
+                setTimeout(function () { window.location.href = "@Url.Action("Index", "Home")"; }, 1000);
 
             }
-            else {
-                layer.msg(data.content);
+            else if (data.status == "noreg") {
+                layer.msg(data.msg);
+                setTimeout(function () { window.location.href = "@Url.Action("Register", "User")"; }, 1000);
+
+            }
+            else
+            {
+                layer.msg(data.msg);
             }
 
         }

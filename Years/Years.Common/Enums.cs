@@ -25,6 +25,9 @@ namespace Years.Common.Enum
         /// </summary>
         public static string nologin = "nologin";
 
+        //未注册
+        public static string noreg = "noreg";
+
     }
     
 }

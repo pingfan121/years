@@ -16,6 +16,10 @@ namespace Years.WebCore
         {
             return Json(new { status = EnumAjaxState.error, msg = msg });
         }
+        public JsonResult Error(string state,string msg)
+        {
+            return Json(new { status = state, msg = msg });
+        }
 
         protected JsonResult Error(Exception ex)
         {
