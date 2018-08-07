@@ -7,13 +7,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    @*<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />*@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="Cache" content="no-cache">
+    <script src="~/Scripts/flexible/flexible.js?v=@DateTime.Now.ToString()"></script>
     <link href="~/Content/CSS/zui.css" rel="stylesheet" />
-    @*<link href="~/Content/CSS/zui-blog-theme.css" rel="stylesheet" />*@
     <link href="~/Content/CSS/zui-theme-blue.css" rel="stylesheet" />
     <link href="~/Content/CSS/HomeIndex.css" rel="stylesheet" />
     <link href="~/Content/CSS/page_head.css?v=@DateTime.Now.ToString()" rel="stylesheet" />
@@ -23,12 +23,12 @@
         <div class="logo">
             登录
         </div>
-        <div style="margin-right:10px;float:right;text-align:center">
+        <div class="back">
             <img src="~/res/返回.png" />
         </div>
     </div>
 
-    <div class="div1" style="margin-top: 30px">
+    <div class="div1" style="margin-top: 0.5rem">
 
         <div class="logintitle">
             止于唇齿
@@ -36,7 +36,7 @@
             掩于岁月
         </div>
 
-        <div class="formcell" style="margin-top:30px">
+        <div class="formcell" style="margin-top:0.5rem">
             <input type="text" id="country" value="+86" readonly>
             <img src="//static.feixiaohao.com/themes/default/images/slidedown.svg" class="slidedownbtn">
             <input type="text" placeholder="输入手机号" id="user" class="phone-num">

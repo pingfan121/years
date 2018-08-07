@@ -3,13 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="Cache" content="no-cache">
     <link href="~/Content/CSS/zui.css" rel="stylesheet" />
-    @*<link href="~/Content/CSS/zui-blog-theme.css" rel="stylesheet" />*@
+    <script src="~/Scripts/flexible/flexible.js?v=@DateTime.Now.ToString()"></script>
     <link href="~/Content/CSS/zui-theme-blue.css" rel="stylesheet" />
     <link href="~/Content/CSS/HomeIndex.css" rel="stylesheet" />
     <link href="~/Content/CSS/pagerstyles.css" rel="stylesheet" />
@@ -22,7 +21,7 @@
     @Html.Partial("LeftNav")
     @Html.Partial("_NavbarPage")
     <!--主体内容-->
-    <div style="margin-top:50px">
+    <div >
             @RenderBody()
     </div>
     <!--主题部分-->
@@ -47,7 +46,7 @@
             //if ($(this).attr('href') != null) {
             //    setTimeout("top.location.href = '" + $(this).attr('href') + "'", 400);
             //}
-            $('.menupage').css('margin-left', '-250px')
+            $('.menupage').css('margin-left', getrem('-500px'))
             setTimeout(function () {
                 $('.menu').fadeOut('100')
             }, 100)
