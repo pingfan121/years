@@ -1,18 +1,30 @@
-﻿body {
+﻿* {
+    
+    text-decoration: none;
+    border: none;
+    list-style: none;
+}
+
+body {
     background: #eee;
+}
+
+audio, canvas, img, svg, video {
+    max-width: 100%;
+    vertical-align: middle;
 }
 
 /*这三个放在最下面*/
 div {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 [data-dpr="2"] div {
-    font-size: 24px;
+    font-size: 28px;
 }
 
 [data-dpr="3"] div {
-    font-size: 36px;
+    font-size: 42px;
 }
 
 
@@ -69,7 +81,7 @@ div {
     width: 100%;
     line-height: 1.333333rem;
     color: #fff;
-    font-size: 0.426667rem !important;
+    
 }
     .menupageheader .back {
         margin-right: 0.266667rem;
@@ -80,7 +92,9 @@ div {
     }
     .menupageheader .navtxt {
         float: left;
-        margin-left:0.266667rem;
+        margin-left: 0.266667rem;
+        text-align: center;
+        height: 0.533333rem;
         font-size: 0.426667rem !important;
     }
 .regform {
@@ -179,6 +193,41 @@ div {
     font-size: 0.8rem !important;
     color: black;
 }
+/*   导航菜单css          */
+.navlist {
+    width: 100%;
+    height: calc(100% - 85px);
+    overflow: auto;
+}
 
+    .navlist > li > div, .navlist > li > a {
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        padding-left: 15px;
+        font-size: 16px;
+    }
+    .navlist > li:hover {
+        background: #ccc;
+    }
+    .navlist > li a:hover {
+        text-decoration: none;
+    }
+    .navlist > li ul li {
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        padding-left: 20px;
+        font-size: 14px;
+    }
+        .navlist > li ul li:hover {
+            background: #ccc;
+        }
 
+        .navlist > li ul li a:hover {
+            text-decoration: none;
+        }
+    .navlist > li.active {
+        background: #f1f1f1;
+    }
 

@@ -8,35 +8,69 @@
             <div class="back">
                 <img src="~/res/返回.png" />
             </div>
-        </div>
-        <div class="nav navbar-top-links">
-            <div class="sidebar-nav navbar-collapse">
-                <ul class="nav nav-pills nav-stacked">
-                    <li>
-                        嘿嘿
-                    </li>
-                    <li>
-                        嘿嘿
-                    </li>
-                    <li>
-                        <div>嘿嘿</div>
-                        <ul class="nav nav-second-level collapse">
-                            <li>
-                                70嘿嘿
-                            </li>
-                            <li>
-                                80嘿嘿
-                            </li>
-                            <li>
-                                90嘿嘿
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        </div >
+               <ul  class="navlist">
+                   <li>
+                       <a href="#">岁月</a>
+                   </li>
+                   <li>
+                       <div>烟火</div>
+                       <ul style="display:none">
+                           <li>
+                               <a href="#">岁月</a>
+                           </li>
+                           <li>
+                               <a href="#">烟花</a>
+                           </li>
+                           <li>
+                               <a href="#">天赋</a>
+                           </li>
+                       </ul>
+                   </li>
+                   <li>
+                       <a href="#">天赋</a>
+                   </li>
+               </ul>
+
     </div>
-    <div class="form"style="margin-top:50px">
-        
+
+    </div>
+    <div class="form" style="margin-top:50px">
+
     </div>
 </nav>
+<script>
+    $('.navlist>li').click(function (e) {
+    e.stopPropagation();
+    if ($(this).find('ul').length > 0 && !$(this).hasClass('active')) {
+        $('.navlist>li').find('ul').hide();
+        $('.navlist>li').removeClass('active');
+        $(this).find('ul').slideDown('fast');
+        $(this).addClass('active');
+    } else {
+        $(this).find('ul').slideUp('fast');
+        $(this).removeClass('active');
+    }
+    });
+    //$('.menu').click(function () {
+
+    //    //if ($(this).attr('href') != null) {
+    //    //    setTimeout("top.location.href = '" + $(this).attr('href') + "'", 400);
+    //    //}
+    //    $('.menupage').css('margin-left', getrem('-500px'))
+    //    setTimeout(function () {
+    //        $('.menu').fadeOut('100')
+    //    }, 100)
+    //    return false
+    //});
+    $('.memuheader .back,.memu a').click(function () {
+        if ($(this).attr('href') != null) {
+            setTimeout("top.location.href = '" + $(this).attr('href') + "'", 400);
+        }
+        $('.memu .list').css('margin-left', '-250px')
+        setTimeout(function () {
+            $('.memu ').fadeOut('100')
+        }, 100)
+        return false
+    });
+</script>
