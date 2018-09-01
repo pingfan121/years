@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Years.ViewModel", "Years.Vi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Years.Model", "Years.Model\Years.Model.csproj", "{7A3E0C83-A1A6-4DD5-A87E-F6DCC75466B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "plane", "plane\plane.csproj", "{673BBB17-30F3-40B6-A08D-9C1FF324DD98}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,10 @@ Global
 		{7A3E0C83-A1A6-4DD5-A87E-F6DCC75466B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A3E0C83-A1A6-4DD5-A87E-F6DCC75466B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A3E0C83-A1A6-4DD5-A87E-F6DCC75466B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{673BBB17-30F3-40B6-A08D-9C1FF324DD98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{673BBB17-30F3-40B6-A08D-9C1FF324DD98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{673BBB17-30F3-40B6-A08D-9C1FF324DD98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{673BBB17-30F3-40B6-A08D-9C1FF324DD98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +100,7 @@ Global
 		{4649ACEF-8377-4005-8B88-FE642772D258} = {1390A527-9E10-4434-9266-A60E7063D99B}
 		{9C148918-C9E2-447C-AB08-B8EAB45A09C5} = {78D59A0A-9207-4206-9805-DC547DB3A59E}
 		{7A3E0C83-A1A6-4DD5-A87E-F6DCC75466B6} = {78D59A0A-9207-4206-9805-DC547DB3A59E}
+		{673BBB17-30F3-40B6-A08D-9C1FF324DD98} = {1390A527-9E10-4434-9266-A60E7063D99B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8F509243-13D9-4694-9A37-87863C82B535}
